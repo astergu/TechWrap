@@ -17,13 +17,24 @@
 
 机器学习是用统计学习的方式来从数据中抽象出对实际问题有帮助的模式。
 
-- [机器学习举例简介]() 
+- [机器学习举例简介](http://www.r2d3.us/visual-intro-to-machine-learning-part-1/) 
 
 2. 机器学习和人工智能的关系
 
 3. 机器学习的挑战
 
+# 机器学习算法分类
 
+- Supervised Learning 监督学习
+    - Classification 分类
+    - Regression 回归
+- Unsupervised Learning 非监督学习
+    - Clustering 聚类
+
+# 机器学习算法
+- [] Neural Networks 神经网络
+    - [] Perceptron 感知器
+- [] Deep Learning 深度学习   
 
 ## Useful Links
 
