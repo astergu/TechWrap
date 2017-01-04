@@ -27,7 +27,7 @@
 
 - Supervised Learning 监督学习
     - Classification 分类
-        Perceptron
+        - Perceptron (感知器)
     - Regression 回归
 - Unsupervised Learning 非监督学习
     - Clustering 聚类
