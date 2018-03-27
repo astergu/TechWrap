@@ -1,10 +1,6 @@
-# Define My Value
-
-## Try Task List
+# Task List
 
 - [x] 学习Github Flavored Markdown
-- [x] 准备预备知识，扫除基础障碍
-- [] 制定学习计划
 - [] 列出需要掌握的机器学习算法列表，以及适用场景（可以根据类别）
 - [] 列出需要研究掌握的概念和算法
 - [] 创造属于自己的算法描述，最好可以配以描述案例。
