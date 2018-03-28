@@ -58,3 +58,11 @@ reference: [tech-interview-handbook/array](https://github.com/yangshun/tech-inte
 - Given an array of integers where every value appears twice except one, find the single, non-repeating value. Follow up: do so with O(1) space.
   - E.g., `[2, 5, 3, 2, 1, 3, 4, 5, 1]` returns 4, because it is the only value that appears in the array only once.
 
+
+## Other Sources
+
+- Given an array of numbers (e.g. integers), there are two kinds of operations: rotate (clock-wise) and delete. 
+Rotate the array *n* times and then delete the *n*th last element. If the *n*th last element does not exist then
+deletes the first element present in the array. Your task is to find out which is the last
+element that you deletes from the array so that the array becomes empty after removing it.
+    - source: [https://practice.geeksforgeeks.org/problems/rotate-and-delete/0] (https://practice.geeksforgeeks.org/problems/rotate-and-delete/0)
