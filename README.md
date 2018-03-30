@@ -36,8 +36,6 @@
 
 ## Useful Links
 
-[Numpy指南](numpy.md)
-
 [没有数学基础如何进阶机器学习](http://machinelearningmastery.com/techniques-to-understand-machine-learning-algorithms-without-the-background-in-mathematics/)
 
 
