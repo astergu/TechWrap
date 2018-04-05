@@ -20,3 +20,11 @@ Code example:
 ## CRF 条件随机场
 
 ## Neural Networks 神经网络
+
+# References
+
+- Deep Learning for NLP
+    - [https://cs224d.stanford.edu/lecture_notes/notes1.pdf](https://cs224d.stanford.edu/lecture_notes/notes1.pdf)
+- Google Word2Vec Model
+    - [https://arxiv.org/pdf/1310.4546.pdf](https://arxiv.org/pdf/1310.4546.pdf)
+    - [http://mccormickml.com/2016/04/12/googles-pretrained-word2vec-model-in-python/](http://mccormickml.com/2016/04/12/googles-pretrained-word2vec-model-in-python/)
