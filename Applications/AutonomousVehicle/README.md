@@ -24,6 +24,8 @@ RRT通过对状态空间中的采样点进行碰撞检测，避免了对空间�
 
 ![RRT example](https://images2015.cnblogs.com/blog/890966/201701/890966-20170119115427765-1225467664.jpg)
 
+随机取点，路径不稳定，常用于机器人走迷宫，不适合用来做自动驾驶车
+
 
 ### State lattice
 
@@ -38,3 +40,9 @@ RRT通过对状态空间中的采样点进行碰撞检测，避免了对空间�
 ## Tesla
 
 ## Audi
+
+# Deep Learning in Autonomous Driving
+
+## MIT
+
+## Drive.ai
