@@ -23,7 +23,7 @@ class DisjointSetByArray(object):
             the set that contains element (x and y are in
             different sets). The original sets will be destroyed.
         """
-        if (self._disjoint_set[x] < self._disjoint_set[y])
+        if self._disjoint_set[x] < self._disjoint_set[y]:
             self._disjoint_set[x] = self._disjoint_set[y]
         else:
             self._disjoint_set[y] = self._disjoint_set[x]

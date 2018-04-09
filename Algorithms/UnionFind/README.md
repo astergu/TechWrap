@@ -1,4 +1,5 @@
 [**Disjoint Set Implementation**](DisjointSet.py)
+    
     - **Array(数组实现)**: 用array来表示输入中每个元素的group，比如名为parent，其中parent[i]代表每个元素的group。这种实现union操作复杂度为O(n)，find操作复杂度为O(1)。
     - **Tree(树实现)**：在同一棵树里的元素代表他们在同一个组（disjoint set）里，其中每棵树的根节点叫做the representative of the set。这种实现union操作复杂度为O(1)，find操作复杂度为O(n)。
 
