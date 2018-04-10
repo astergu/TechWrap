@@ -2,6 +2,13 @@ Facebook的工作方向
 
 # Machine Learning in Facebook
 
+Facebook使用的机器学习模型包括逻辑回归（Logistic Regression，LR）、支持向量机（Support Vector Machine，SVM）、梯度提升决策树（Gradient Boosted Decision
+Tree，GBDT），以及深度神经网络（Deep Neural Network，DNN）。LR和SVM用于训练和预测的效率很高。GBDT使用额外的计算资源可以提高准确性。DNN是最具表现力的模型，有能力达到最高的准确性，但是它利用的资源最多（计算量至少超过像LR和SVM这样的线性模型一个数量级）。
+
+在DNN中，主要使用的网络类型有三种：多层感知器（Multi-Layer Perceptrons，MLP）一般用于结构化的输入特征（如排序），卷积神经网络（Convolutional Neural Networks，CNN）作为空间处理器（如图像处理），以及循环神经网络（RNN、LSTM）主要用于序列处理器（如语言处理）。
+
+![Facebook产品或服务使用的机器学习算法](https://s3.amazonaws.com/infoq.content.live.0/articles/applied-machine-learning-at-facebook/zh/resources/3541-1518027537279.png)
+
 ## Search
 ### Content Search
 
@@ -86,4 +93,5 @@ every minute in realtime to create a personalized newspaper for each user.
 
 Deep learning, ranking, recommendation algorithms, NLP/Content understanding
 
- 
+# References
+- Link: [Facebook的应用机器学习平台](http://www.infoq.com/cn/articles/applied-machine-learning-at-facebook?utm_campaign=rightbar_v2&utm_source=infoq&utm_medium=articles_link&utm_content=link_text) 
