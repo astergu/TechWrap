@@ -21,6 +21,15 @@ Code example:
 
 ## Neural Networks 神经网络
 
+## Word2Vec
+
+Word2Vec attempts to understand meaning and semantic relationships among words. It works in a way that is similar to deep approaches, such as recurrent neural nets or deep neural nets, but is computationally more efficient.
+
+### Practice
+- **Sentiment Analysis**(情感分析)
+    - [Kaggle competition: Bag of Words Meets Bags of Popcorn](../kaggle/BagOfWordsMeetsBagsOfPopcorn)
+    - [kaggle link](https://www.kaggle.com/c/word2vec-nlp-tutorial)
+
 # References
 
 - Deep Learning for NLP

@@ -7,3 +7,8 @@
 *.iml
 out
 gen
+
+# data files
+.csv
+.tsv
+.zip
