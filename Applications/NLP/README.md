@@ -31,7 +31,7 @@ Word2Vec attempts to understand meaning and semantic relationships among words. 
     - [kaggle link](https://www.kaggle.com/c/word2vec-nlp-tutorial)
 
 # References
-
+- Word2Vec paper: [Efficient Estimation of Word Representations in Vector Space](http://arxiv.org/pdf/1301.3781v3.pdf)
 - Deep Learning for NLP
     - [https://cs224d.stanford.edu/lecture_notes/notes1.pdf](https://cs224d.stanford.edu/lecture_notes/notes1.pdf)
 - Google Word2Vec Model
