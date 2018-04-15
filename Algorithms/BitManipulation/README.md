@@ -1,7 +1,7 @@
 There is no concept of an unsigned shift in Python, since integers have infinite precision.
 
 - Be very comfortable with the **bitwise operators**, particularly XOR.
-- Know fast ways to clear the lowermost set bit (and set the lowermost 0, get its index, etc.)
+- Know fast ways to **clear the lowermost set bit** (and set the lowermost 0, get its index, etc.)
 - Understand **signedness** and its implications to **shifting**.
 - Consider using a **cache** to accelerate operations by using it to brute-force small inputs.
 

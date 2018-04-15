@@ -1,3 +1,10 @@
+# Practical Tips
+
+- Array problems often have simple brute-force solutions that use *O(n)* space, but there are subtler solutions that **use the array itself** to **reduce space** complexity to *O(1)*.
+- Filling an array from the front is slow, so see if it's possible to **write values from the back**.
+- Instead of deleting an entry (which requires moving all entries to its right), consider **overwriting** it.
+- When dealing with integers encoded by an array consider **processing the digits from the back** of the array. Alternatively, reverse the array so the **least-significant digit is the first entry**.
+
 # Algorithm Questions about Arrays
 
 reference: [tech-interview-handbook/array](https://github.com/yangshun/tech-interview-handbook/blob/master/algorithms/array.md)
