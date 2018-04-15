@@ -67,7 +67,7 @@ reference: [tech-interview-handbook/array](https://github.com/yangshun/tech-inte
 
 
 ## Other Sources
-
+- [] *K*th smallest element in an array 
 - [x] [Rotate and Delete](RotateAndDelete.py): Given an array of numbers (e.g. integers), there are two kinds of operations: rotate (clock-wise) and delete. 
 Rotate the array *n* times and then delete the *n*th last element. If the *n*th last element does not exist then
 deletes the first element present in the array. Your task is to find out which is the last
