@@ -4,6 +4,26 @@
 - Filling an array from the front is slow, so see if it's possible to **write values from the back**.
 - Instead of deleting an entry (which requires moving all entries to its right), consider **overwriting** it.
 - When dealing with integers encoded by an array consider **processing the digits from the back** of the array. Alternatively, reverse the array so the **least-significant digit is the first entry**.
+- **Dutch National Flag Problem** (quicksort)
+```python
+def dutch_flag_partition(pivot_index, A):
+    pivot = A[pivot_index]
+    smaller, equal, larger = 0, 0, len(A)
+    while equal < larger:
+        if A[equal] < pivot:
+            A[smaller], A[equal] = A[equal], A[smaller]
+            smaller, equal = smaller + 1, equal + 1
+        elif A[equal] == pivot:
+            equal += 1
+        else:
+            larger -= 1
+            A[equal], A[larger] = A[larger], A[equal]
+```
+Each iteration decreases the size of *unclassified* by 1, and the time spent within each iteration is *O(1)*, implying the time complexity is *O(n)*. The space complexity is clearly *O(1)*.
+    - **Variant**: Assuming that keys take on of three values, reorder the array so that all objects with the same key appear together. The order of the subarray is not important.
+    - **Variant**: Given an array *A* of *n* objects with keys that takes one of four values, reorder the array so that all objects that have the same key appear together. Use *O(1)* additional space and *O(n)* time.
+    - **Variant**: Given an array *A* of *n* objects with Boolean-valued keys, reorder the array so that objects that have the key false appear first. Use *O(1)* additional space and *O(n)* time.
+    - *Variant*: Given an array *A* of *n* objects with Boolean-valued keys, reorder the array so that objects that have the key false appear first. The relative ordering of objects with key true should not change. Use *O(1)* additional space and *O(n)* time.
 
 # Algorithm Questions about Arrays
 
