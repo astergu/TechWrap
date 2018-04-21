@@ -1,3 +1,28 @@
+```python
+class BinaryTreeNode:
+    def __init__(self, data=None, left=None, right=None):
+        self.data = data
+        self.left = left
+        self.right = right
+```
+- A *full binary tree* is a binary tree in which every node other than the leaves has two children. 
+- A *perfect binary tree* is a full binary tree in which all leaves are at the 
+same depth, and in which every parent has two children. 
+- A *complete binary tree* is a binary tree in which every leve, except possibly the last, is complete filled, and all nodes are as far left as possible.
+- A perfect binary tree of height *h* contains exactly 2<sup>h+1</sup> - 1 nodes, of which 2<sup>h</sup> are leaves. A complete binary tree on *n* nodes has height [logn]. 
+
+
+## Practical Tips
+- **Recursive algorithms** are well-suited to problems on trees. Remember to include space implicitly allocated on the function call stack when doing space complexity analysis.
+- Some tree problems have simple brute-force solutions that use *O(n)* space solution, but subtler solutions that uses the **existing tree nodes** to reduce space complexity in *O(1)*.
+
+## Base problems
+- **Test If A Binary Tree is Height-balanced**
+```python
+# A binary tree is said to be height-balanced if for each node in the tree, the difference
+in the height of its left and right subtrees is at most one.
+```
+
 # Tree Traversal 树的遍历
 
 ## Binary Tree Preorder Traversal 前序遍历
