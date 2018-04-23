@@ -21,7 +21,29 @@ same depth, and in which every parent has two children.
 ```python
 # A binary tree is said to be height-balanced if for each node in the tree, the difference
 in the height of its left and right subtrees is at most one.
+def is_balanced_binary_tree(tree):
+    BalancedStatusWithHeight = collections.namedtuple(
+        'BalancedStatusWithHeight', ('balanced', 'height'))
+
+    def check_balanced(tree):
+        if not tree:
+            return BalancedStatusWithHeight(True, -1)  # Base case. 
+
+        left_result = check_balanced(tree.left)
+        if not left_result.balanced:
+            return BalancedStatusWithHeight(False, 0)
+        
+        right_result = check_balanced(tree.right)
+        if not right_result.balanced:
+            return BalancedStatusWithHeight(False, 0)
+
+        is_balanced = abs(left_result.height - right_result.height) <= 1
+        height = max(left_result.height, right_result.height) + 1
+        return BalancedStatusWithHeight(is_balanced, height)
 ```
+Time complexity *O(n)*, space complexity *O(h)*.
+- **Variant**: Write a program that returns the size of the largest subtree that is complete.
+- **Variant**: Define a node in a binary tree to be *k*-balanced if the difference in the number of nodes in its left and right subtrees is no more than *k*. Design an algorithm that takes as input a binary tree and positive integer *k*, and returns a node in the binary tree such that the node is not *k*-balanced, but all of its descentdants are *k*-balanced.
 
 # Tree Traversal 树的遍历
 
