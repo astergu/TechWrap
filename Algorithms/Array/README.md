@@ -24,11 +24,17 @@ Each iteration decreases the size of *unclassified* by 1, and the time spent wit
     - **Variant**: Given an array *A* of *n* objects with keys that takes one of four values, reorder the array so that all objects that have the same key appear together. Use *O(1)* additional space and *O(n)* time.
     - **Variant**: Given an array *A* of *n* objects with Boolean-valued keys, reorder the array so that objects that have the key false appear first. Use *O(1)* additional space and *O(n)* time.
     - *Variant*: Given an array *A* of *n* objects with Boolean-valued keys, reorder the array so that objects that have the key false appear first. The relative ordering of objects with key true should not change. Use *O(1)* additional space and *O(n)* time.
+- **PrefixSum Array**
+
+prefixSum[x] = sum of subarray(0, x) 
+             = nums[0] + nums[1] + ... + nums[x] 
 
 # Algorithm Questions about Arrays
 
 reference: [tech-interview-handbook/array](https://github.com/yangshun/tech-interview-handbook/blob/master/algorithms/array.md)
 
+- [Subarray Sum Equals K](SubarraySumEqualsK.py)
+    - 利用prefixSum，只遍历一次便可得到全部的subarray sum，另外利用额外的map来记录之前的结果，最终时间复杂度为O(N)，空间复杂度为O(N)。
 - In an array of arrays, e.g. given `[[], [1, 2, 3], [4, 5], [], [], [6, 7], [8], [9, 10], [], []]`, print `1, 2, 3, 4, 5, 6, 7, 8, 9, 10`
     - Implement an iterator that supports `hasNext()`, `next()`, and `remove()` methods.
 - Given a list of item prices, find all possible combinations of items that sum a particular value `K`.
