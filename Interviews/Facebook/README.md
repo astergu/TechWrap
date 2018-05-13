@@ -1,9 +1,13 @@
 Facebook面试准备的试题。
 
-## Glassdoor Software Engineer Questions
+## Popular Questions
 - [x] [Subarray Sum Equals K](../../Algorithms/Array/SubarraySumEqualsK.py)
     - 利用prefixSum，只遍历一次便可得到全部的subarray sum，另外利用额外的map来记录之前的结果，最终时间复杂度为O(N)，空间复杂度为O(N)。
-- [x] [Write oode to raise a number to a power.](RaiseNumberToPower.py)
+- [x] [Minimum Window Substring](../../Algorithms/String/MinimumWindowSubstring.py)
+
+
+## Glassdoor Software Engineer Questions
+- [x] [Write code to raise a number to a power.](RaiseNumberToPower.py)
 - [x] Suppose you have a matrix of numbers. How can you easily compute the [sum of any rectangle](SumOfRectangle.py) (i.e. a range \[row_start, row_end, col_start, col_end\]) of these numbers? How would you code this? 
     - Analysis: frequent queries on a static matrix, use dynamic programming
     - wiki: [https://en.wikipedia.org/wiki/Summed_area_table](https://en.wikipedia.org/wiki/Summed_area_table)

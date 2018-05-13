@@ -52,22 +52,49 @@ def convert_base(num_as_string, b1, b2):
 ```
 The time complexity is *O(n(1 + log<sub>b<sub>2</sub></sub>b<sub>1</sub>))*, where *n* is the length of *s*.
 
+## Basic Questions
+
+### Substring Match
+
+KMP算法
+
+### Anagrams Substring Search / All Permutations
+
+[https://www.geeksforgeeks.org/anagram-substring-search-search-permutations/](https://www.geeksforgeeks.org/anagram-substring-search-search-permutations/)
+
+
+
 
 ## Questions
-
+- [x] [Minimum Windows Substring](MinimumWindowSubstring.py)
+    - 涉及SlidingWindow算法、Hash Table、Two Pointers双指针等，比较有难度，大部分情况下会在onsite中出现。
+    
 - [] Next Permutation
     - link: [https://leetcode.com/problems/next-permutation/description/](https://leetcode.com/problems/next-permutation/description/)
 - [x] [Longest Palindrome Substring](LongestPalindromeSubstring.py)
     - link: [https://leetcode.com/problems/longest-palindromic-substring/description/](https://leetcode.com/problems/longest-palindromic-substring/description/)
 - [x] [Regular Expression Matching](RegularExpressionMatching.py)
     - link: [https://leetcode.com/problems/regular-expression-matching/description/](https://leetcode.com/problems/regular-expression-matching/description/)
-- [] Find All Anagrams in a String
+- [x] [Find All Anagrams in a String](FindAllAnagramsInAString.py)
     - link: [https://leetcode.com/problems/find-all-anagrams-in-a-string/submissions/1](https://leetcode.com/problems/find-all-anagrams-in-a-string/submissions/1)
-- [] [Implement Atoi](ImplementAtoI.py)
+    - solution： Sliding Windows Solution
+- [] [Permutation in String](PermutationInString.py)
+    - link: [https://leetcode.com/problems/permutation-in-string/description/](https://leetcode.com/problems/permutation-in-string/description/)
+- [x] [Implement Atoi](ImplementAtoI.py)
     - link: [https://leetcode.com/problems/string-to-integer-atoi/description/](https://leetcode.com/problems/string-to-integer-atoi/description/)
+- [] [Implement strStr]()
 
 ## Classical Algorithms 经典算法
 
-### Knuth-Morris-Pratt Algorithm (KMP)
+### Knuth-Morris-Pratt Algorithm (KMP, Knuth-Morris-Pratt字符串查找算法)
+- 目标：在一个主文本字符串*s*中查找一个词*w*的出现位置。
+- 方法：此算法通过运用对这个词在不匹配时本身就包含足够的信息来确定下一个匹配将在
+       哪里开始的发现，从而避免重新检查先前匹配的字符。
+
+### Sliding Window Algorithm (滑动窗口算法)
+
+可以解决一系列substring searching problem，基本思想是利用双指针，以及map数据结构，维护一个
+不断扩展、伸缩的窗口，在窗口内探测记录感兴趣的结果。
+
 
 ### Aho-Corasick Algorithm
