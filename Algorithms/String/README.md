@@ -80,6 +80,7 @@ KMP算法
     - solution： Sliding Windows Solution
 - [] [Permutation in String](PermutationInString.py)
     - link: [https://leetcode.com/problems/permutation-in-string/description/](https://leetcode.com/problems/permutation-in-string/description/)
+    - solution: 
 - [x] [Implement Atoi](ImplementAtoI.py)
     - link: [https://leetcode.com/problems/string-to-integer-atoi/description/](https://leetcode.com/problems/string-to-integer-atoi/description/)
 - [] [Implement strStr]()
