@@ -84,6 +84,8 @@ KMP算法
 - [x] [Implement Atoi](ImplementAtoI.py)
     - link: [https://leetcode.com/problems/string-to-integer-atoi/description/](https://leetcode.com/problems/string-to-integer-atoi/description/)
 - [] [Implement strStr]()
+- [] [Permutations of a given string](PermutationsOfAGivenString.py)
+    - solution: backtracking回溯算法
 
 ## Classical Algorithms 经典算法
 

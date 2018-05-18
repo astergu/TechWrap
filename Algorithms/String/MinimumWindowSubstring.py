@@ -26,28 +26,7 @@ class Solution(object):
         :type t: str
         :rtype: str
         """
-        from collections import Counter
-        lent = len(t)
-        m, n = 0, 0
-        res = ""
-        while m < len(s) and n < len(s):
-            if n < m:
-                idx = self.find(s[m:m+lent], t)
-                if idx == -1:
-                    m += lent
-                else:
-                    m += idx
-                n = m + lent
-            else:
-                cnt = Counter(s[m:n])
-
-
-
-    def find(self, s, t):
-        for i, c in enumerate(s):
-            if c in t:
-                return i
-        return -1
+        pass
 
 
 class SolutionTest(unittest.TestCase):

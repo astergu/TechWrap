@@ -1,0 +1,21 @@
+## Glassdoor Questions
+
+- Boogle/Word Search Puzzle
+- Compare two lists and print the duplicate items. What is the time complexity of the algorithm? Can you make it more efficient? What if you could replace the structures with any other data structures? 
+- Retrieve the last *n* lines of a file.
+- How to implement "tail" in Linux.
+- Code autocomplete (type a word, comes up with suggestions).
+- You are given a web server log file (list of timestamp, verb, uri, status code). Print a report showing the count per unique verb-uri-code plus the number of active users (taken from the uri).  
+- Count number of islands in a binary graph.
+- Given multiple values in int ranges, find the longest distance between any pair of numbers across intervals. 
+- Find binary tree LCA.
+- LRU Cache
+- **Count the "islands" on a binary matrix of 0's and 1's.** 
+- TinyURL
+- Generate all subsets of a string.  
+- Check distance between values in linked list.
+- Function to determine whether the driver is allowed to enter driver mode.
+    - drivers are not allowed to drive a total of 12 hours without an 8 hour break
+    - the function inputs are:
+        - a list of driver shifts as start/end integers, the integer is relative to lyft launch
+        - the current time since lyft launch as integer

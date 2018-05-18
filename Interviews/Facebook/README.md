@@ -4,7 +4,9 @@ Facebook面试准备的试题。
 - [x] [Subarray Sum Equals K](../../Algorithms/Array/SubarraySumEqualsK.py)
     - 利用prefixSum，只遍历一次便可得到全部的subarray sum，另外利用额外的map来记录之前的结果，最终时间复杂度为O(N)，空间复杂度为O(N)。
 - [x] [Minimum Window Substring](../../Algorithms/String/MinimumWindowSubstring.py)
-- [] [Subarray with Given Sum](../../Algorithms/Array/SubarrayWithGivenSum.py)
+- [x] [Subarray with Given Sum](../../Algorithms/Array/SubarrayWithGivenSum.py)
+- [] [Schedule Tasks](ScheduleTasks.py)
+    - Description: 
 
 
 ## Glassdoor Software Engineer Questions

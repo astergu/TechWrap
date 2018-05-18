@@ -33,3 +33,15 @@ Deep learning algorithms can be categorized by their architecture (feed-forward,
 - [Deep Learning for Signal and Information Processing](http://cs.tju.edu.cn/web/docs/2013-Deep%20Learning%20for%20Signal%20and%20Information%20Processing.pdf), by Li Deng and Dong Yu (out of Microsoft).
 - [Deep Learning Tutorial](http://www.cs.nyu.edu/~yann/talks/lecun-ranzato-icml2013.pdf), (2013 Presentation by Yann LeCun and Marc'Aurelio Ranzato)
 - [How to Build and Run Your First Deep Learning Network](http://radar.oreilly.com/2014/07/how-to-build-and-run-your-first-deep-learning-network.html)
+
+
+# Materials
+## Open Courses
+- **机器学习基石 Machine Learning Foundations by 林轩田**
+[https://www.bilibili.com/video/av12463015/](https://www.bilibili.com/video/av12463015/)
+    - *When do machines learn? 什么时候用机器学习？*
+        - 存在一个pattern可以学习，并且可以衡量效果
+        - 难以通过编码的方式人工定义问题和解决问题
+        - 存在关于这个pattern可以利用的数据
+
+- **机器学习技法  Machine Learning Techniques by 林轩田**
