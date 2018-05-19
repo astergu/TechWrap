@@ -27,7 +27,6 @@ class Solution(object):
             for j in xrange(i, len(s)):
                 stcp = [c for c in s]
                 stcp[j], stcp[i] = stcp[i], stcp[j]
-                #print "stcp: ", stcp, ", i: ", i, ", j: ", j
                 permute(stcp, i + 1)
 
         permute(s, 0)

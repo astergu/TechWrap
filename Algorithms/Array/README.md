@@ -37,7 +37,11 @@ reference: [tech-interview-handbook/array](https://github.com/yangshun/tech-inte
     - 利用prefixSum，只遍历一次便可得到全部的subarray sum，另外利用额外的map来记录之前的结果，最终时间复杂度为O(N)，空间复杂度为O(N)。
 - [Subarray with given sum](SubarrayWithGivenSum.py)
     - link: [https://practice.geeksforgeeks.org/problems/subarray-with-given-sum/0](https://practice.geeksforgeeks.org/problems/subarray-with-given-sum/0)
-- [Minimum Size Subarray Sum](MinimumSizeSubarraySum.py) 
+- [Minimum Size Subarray Sum](MinimumSizeSubarraySum.py)
+- [Permutations of an array](Permutations.py)
+    - 说明：array不存在重复，返回结果不要求顺序。
+- [Permutations II of an array](PermutationsII.py)
+    - 说明：array可能存在重复元素，返回结果需要去重。 
 - In an array of arrays, e.g. given `[[], [1, 2, 3], [4, 5], [], [], [6, 7], [8], [9, 10], [], []]`, print `1, 2, 3, 4, 5, 6, 7, 8, 9, 10`
     - Implement an iterator that supports `hasNext()`, `next()`, and `remove()` methods.
 - Given a list of item prices, find all possible combinations of items that sum a particular value `K`.
