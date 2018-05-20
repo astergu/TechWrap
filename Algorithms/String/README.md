@@ -86,7 +86,13 @@ KMP算法
 - [] [Implement strStr]()
 - [] [Permutations of a given string](PermutationsOfAGivenString.py)
     - solution: backtracking回溯算法
-
+- [x] [Longest Palindrome](LongestPalindrome.py)
+    - link: [https://leetcode.com/problems/longest-palindrome/description/](https://leetcode.com/problems/longest-palindrome/description/)
+- [x] [Longest Palindrome Substring](LongestPalindromeSubstring.py)
+    - link: [https://leetcode.com/problems/longest-palindromic-substring/description/](https://leetcode.com/problems/longest-palindromic-substring/description/)
+    - link: [https://practice.geeksforgeeks.org/problems/longest-palindrome-in-a-string/0](https://practice.geeksforgeeks.org/problems/longest-palindrome-in-a-string/0)
+    - 分析：时间复杂度O(n^2)，空间复杂度O(n^2)。
+    
 ## Classical Algorithms 经典算法
 
 ### Knuth-Morris-Pratt Algorithm (KMP, Knuth-Morris-Pratt字符串查找算法)

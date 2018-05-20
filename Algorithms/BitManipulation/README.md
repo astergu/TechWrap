@@ -4,6 +4,7 @@ There is no concept of an unsigned shift in Python, since integers have infinite
 - Know fast ways to **clear the lowermost set bit** (and set the lowermost 0, get its index, etc.)
 - Understand **signedness** and its implications to **shifting**.
 - Consider using a **cache** to accelerate operations by using it to brute-force small inputs.
+- *x & 1*表示取数字的奇偶数。 
 
 ## Questions
 - [x] The [parity of a binary word](ParityOfWord.py) is 1 if the number of 1s in the word is odd;

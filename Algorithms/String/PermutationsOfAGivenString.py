@@ -19,19 +19,18 @@ import unittest
 
 class Solution(object):
     def permutations(self, s):
-        ret = []
+        ret = [[]]
+        for char in s:
+            nret = []
+            for perm in ret:
+                for j in xrange(len(perm) + 1):
+                    nret.append(perm[j:] + [char] + perm[:j])
+            ret = nret
+        return [''.join(item) for item in ret]
 
-        def permute(s, i):
-            if i == len(s):
-                ret.append(''.join(s))
-            for j in xrange(i, len(s)):
-                stcp = [c for c in s]
-                stcp[j], stcp[i] = stcp[i], stcp[j]
-                permute(stcp, i + 1)
-
-        permute(s, 0)
-        return ret
-
+    def permutations_str(self, s):
+        for i, char in enumerate(s):
+            pass
 
 class SolutionTest(unittest.TestCase):
     def setUp(self):
@@ -42,6 +41,16 @@ class SolutionTest(unittest.TestCase):
         output = ["ABC", "ACB", "BAC", "BCA", "CAB", "CBA"]
         self.assertListEqual(self.s.permutations(str), output)
 
+    def test2(self):
+        str = "AAB"
+        output = ["AAB", "ABA", "BAA"]
+        self.assertListEqual(self.s.permutations(str), output)
+
 
 if __name__ == '__main__':
-    unittest.main()
+    #unittest.main()
+    str = "ABC"
+    str2 = "AAB"
+    s = Solution()
+    print s.permutations(str)
+    #print s.permutations(str2)
