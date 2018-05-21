@@ -49,3 +49,8 @@ def merge_sorted_arrays(sorted_arrays):
 def merge_sorted_arrays_pythonic(sorted_arrays):
     return list(heapq.merge(*sorted_arrays))
 ```
+
+## Interview Questions
+
+- [] [Heap Sort](HeapSort.cpp)
+    - link: [https://practice.geeksforgeeks.org/problems/heap-sort/1](https://practice.geeksforgeeks.org/problems/heap-sort/1)

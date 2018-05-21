@@ -1,5 +1,10 @@
 "AV company" referring to autonomous driving companies.
 
+## Jingchi
+- Given a set of 2D points, compute the convex hull. (Convex hull is the smallest convex polygon containing
+the points).
+- Given some more points, find if they are inside the convex hull.
+- Can you extend above problems to 3D points? 
 
 ## Drive.ai
 - Probability. Bayes rule.

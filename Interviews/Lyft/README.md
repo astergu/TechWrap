@@ -1,6 +1,6 @@
 ## Glassdoor Questions
 
-- Boogle/Word Search Puzzle
+- [Boogle/Word Search Puzzle](../../Algorithms/Array/WordSearch.py)
 - Compare two lists and print the duplicate items. What is the time complexity of the algorithm? Can you make it more efficient? What if you could replace the structures with any other data structures? 
 - Retrieve the last *n* lines of a file.
 - How to implement "tail" in Linux.
