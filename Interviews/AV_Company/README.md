@@ -1,8 +1,17 @@
 "AV company" referring to autonomous driving companies.
 
 ## Jingchi
-- Given a set of 2D points, compute the convex hull. (Convex hull is the smallest convex polygon containing
-the points).
+- Orienteering Game
+    - Description: We are planning an orienteering game. The aim of this game is to arrive at the goal (G) from the start (S) with the shortest distance.
+However, the players have to pass all the checkpoints (@) on the map.
+In this problem, an orienteering map is to be given.
+    - [http://www.cnblogs.com/crazyacking/p/4474932.html](http://www.cnblogs.com/crazyacking/p/4474932.html)
+    - **Calculate the minimum distance from the start to the goal with passing all the checkpoints.**
+- Given a set of 2D points, **compute the convex hull**. (Convex hull is the smallest convex polygon containing
+the points).   
+    - **计算凸包**：在平面中给出N个点，找出一个由其中某些点作为顶点组成的凸多边形，恰好能围住所有的N个点。
+    - Solutions:
+        - Brute Force: 两点确定一条直线，如果剩余的其它点都在这条直线的同一侧，则这两个点是凸包上的点，否则就不是。
 - Given some more points, find if they are inside the convex hull.
 - Can you extend above problems to 3D points? 
 

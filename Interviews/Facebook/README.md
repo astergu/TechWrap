@@ -1,4 +1,14 @@
 Facebook面试准备的试题。
+## ML Engineer Interview Process 机器学习工程师面试流程
+
+- **Phone Screen Interview (45 min)**
+    - 1~2 coding questions, about computer science foundamentals, including data structures, algorithms, etc.
+- **Onsite Interview (4~5 hours), all on white board**
+    - *2 coding interviews*: 2 coding questions per interview, each interview lasts 45 min. (4 coding questions in total)
+    - *System Design Interview* (45min): mostly focus on building large-scale systems. Think through the design of a complex system, especially with regards to tradeoffs arounds consistency, availability, partition tolerance.
+    - *ML Practical Design interview* (45min): give a open design question, design a machine learning solution and explain why, e.g., design a news feed ranking system.
+    - *Career Development Interview (Behavioral)* (45min): hosted by one of the leadership engineers, consist of a combination of two aspects: a conversation and coding. 
+    - *Lunch* (45min): NOT an interview. 
 
 ## Popular Questions
 - [x] [Subarray Sum Equals K](../../Algorithms/Array/SubarraySumEqualsK.py)
