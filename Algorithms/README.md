@@ -1,9 +1,13 @@
 # 算法分类
 
+## 预计算
+
+- [Subarray Sum Equals K](Array/SubarraySumEqualsK.py)
+    - 题目：找出一个数组中的连续元素之和等于K的子数组的个数。
+
 ## DFS/BFS
 
-## Union-Find 并查集
-- [Number of Islands](Graph/NumberOfIslands.py)
+- **Number of Islands**: [Python](Graph/NumberOfIslands.py), [C++](Graph/NumberOfIslands.cpp)
 
 # Backtracking 回溯算法
 - [Permutations in a given string](String/PermutationsOfAGivenString.py)

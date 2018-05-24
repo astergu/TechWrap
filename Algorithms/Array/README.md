@@ -41,7 +41,8 @@ reference: [tech-interview-handbook/array](https://github.com/yangshun/tech-inte
 - [Permutations of an array](Permutations.py)
     - 说明：array不存在重复，返回结果不要求顺序。
 - [Permutations II of an array](PermutationsII.py)
-    - 说明：array可能存在重复元素，返回结果需要去重。 
+    - 说明：array可能存在重复元素，返回结果需要去重。
+- [Continuous Subarray Sum](ContinuousSubarraySum.py)
 - In an array of arrays, e.g. given `[[], [1, 2, 3], [4, 5], [], [], [6, 7], [8], [9, 10], [], []]`, print `1, 2, 3, 4, 5, 6, 7, 8, 9, 10`
     - Implement an iterator that supports `hasNext()`, `next()`, and `remove()` methods.
 - Given a list of item prices, find all possible combinations of items that sum a particular value `K`.
