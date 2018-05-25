@@ -61,6 +61,7 @@ the points).
 - Hashmap implementation ([C/C++](../../Algorithms/HashTable/HashTable.h))
 - Write a function to get an angle between clock hands.
 - [LC 778](../../Algorithms/Graph/SwimInRisingWater.cpp)
+- Flip Image
 
 ### Business related
 - Robotics planning question 

@@ -27,6 +27,7 @@ public:
         for (int i = 0; i < _capacity; ++i) {
             map[i] = nullptr;
         }
+        dummy = new HashNode<K, V>(-1, -1);
     }
 
     int hashCode(K key) {
@@ -36,7 +37,7 @@ public:
     void insert(K key, V value) {
         HashNode<K, V> nnode = new HashNode(key, value);
         int hashidx = hashCode(key);
-        while (map[hashidx] != nullptr && map[hashidx]->key != key) {
+        while (map[hashidx] != nullptr && map[hashidx]->key != key && map[hashidx]->key != -1) {
             hashidx++;
             hashidx %= _capacity;
         }
@@ -57,6 +58,13 @@ public:
     }
 
     void deleteKey(K key) {
+        int hashidx = hashCode(key);
+        while (map[hashidx] != nullptr) {
+            if (map[hashidx]->key == key) {
+                map[hashidx]
+                size--;
+            }
+        }
     }
 
     int isEmpty() {
@@ -65,7 +73,7 @@ public:
 
 private:
     HashNode<K, V> **map;
-    HashNode<K, V> *dummy;
+    //HashNode<K, V> *dummy;
     int _size;
     int _capacity;
 };
