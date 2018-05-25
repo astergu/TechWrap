@@ -1,7 +1,3 @@
-//
-// Created by Peiqin on 22/05/2018.
-//
-
 /**
  * https://practice.geeksforgeeks.org/problems/check-if-two-line-segments-intersect/0
  *
