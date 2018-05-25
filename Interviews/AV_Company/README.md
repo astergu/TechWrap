@@ -58,7 +58,7 @@ the points).
 - How to tell [if a polygon is closed](../../Algorithms/Geometry/IsPolygonClosed.cpp)?
 - Build a matrix class in C++
 - Write a Lyapunov stability analysis for a first order diff eq. 
-- Hashmap implementation (C/C++)
+- Hashmap implementation ([C/C++](../../Algorithms/HashTable/HashTable.h))
 - Write a function to get an angle between clock hands.
 - [LC 778](../../Algorithms/Graph/SwimInRisingWater.cpp)
 

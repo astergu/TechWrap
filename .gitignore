@@ -44,3 +44,7 @@ gen
 *.csv
 *.tsv
 *.zip
+
+
+# user defined files
+main.cpp
