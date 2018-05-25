@@ -14,11 +14,11 @@ public:
         _y = point.y();
     }
 
-    double x() const { return _x; }
-    double y() const { return _y; }
+    const double x() const { return _x; }
+    const double y() const { return _y; }
 private:
-    double _x = 0.0;
-    double _y = 0.0;
+    double _x;
+    double _y;
 };
 
 #endif //TECHWRAP_POINT_H
