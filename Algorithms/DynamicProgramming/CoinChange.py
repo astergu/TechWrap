@@ -17,6 +17,7 @@ You may assume that you have an infinite number of each kind of coin.
 
 """
 
+import sys
 import unittest
 
 
@@ -26,26 +27,24 @@ class Solution(object):
         :type coins: List[int]
         :type amount: int
         :rtype: int
+        Time complexity: O(m * n), Space complexity: O(m)
         """
         if not coins:
             return -1
         coins.sort()
-        count, idx = 0, len(coins) - 1
-        while amount > 0 and idx >= 0:
-            print "amount: ", amount, ", idx: ", idx, ", count: ", count
-            divisor = amount / coins[idx]
-            amount -= coins[idx] * divisor
-            count += divisor
-            idx -= 1
-
-        return count if amount == 0 else -1
+        res = [sys.maxint] * (amount + 1)
+        res[0] = 0
+        for i in xrange(len(coins) - 1, -1, -1):
+            for j in xrange(1, amount + 1):
+                if j - coins[i] >= 0:
+                    res[j] = min(res[j - coins[i]] + 1, res[j])
+        return res[amount] if res[amount] != sys.maxint else -1
 
 
 class SolutionTest(unittest.TestCase):
     def setUp(self):
         self.s = Solution()
 
-    """
     def test1(self):
         coins = [1, 2, 5]
         amount = 11
@@ -56,8 +55,7 @@ class SolutionTest(unittest.TestCase):
         coins = [2]
         amount = 3
         ret = self.s.coinChange(coins, amount)
-       self.assertEqual(ret, -1)
-    """
+        self.assertEqual(ret, -1)
 
     def test3(self):
         coins = [186,419,83,408]
@@ -65,5 +63,11 @@ class SolutionTest(unittest.TestCase):
         ret = self.s.coinChange(coins, amount)
         self.assertEqual(ret, 20)
 
+
 if __name__ == '__main__':
     unittest.main()
+    #coins = [1, 2, 5]
+    #amount = 11
+    #s = Solution()
+    #ret = s.coinChange(coins, amount)
+    #print "ret: ", ret

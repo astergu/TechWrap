@@ -53,6 +53,15 @@ the points).
     - 二维平面坐标系里一堆点，坐标点都是(X, Y)，X和Y都是整数，每个坐标点上携带一个double类型的score值，求从原点开始画一个圆，使得圆中的点的score之和最大。
 - 给一个一维数组，比如，[1, 2, 3, 4, 5, 6, 7, 8]，然后两两求平均数，再把两两的差值记录在最后，得到[1.5, 3.5, 5.5., 7.5, -1, -1, -1, -1]。然后对前半部分进行相同的操作，后半数组保持不变，反复操作直到只有一个数了。
 
+## Nuro
+- How to check [two line segments intersect](../../Algorithms/Geometry/CheckTwoLineSegmentsIntersect.cpp) (2-Dimension)?
+- How to tell [if a polygon is closed](../../Algorithms/Geometry/IsPolygonClosed.cpp)?
+- Build a matrix class in C++
+- Write a Lyapunov stability analysis for a first order diff eq. 
+- Hashmap implementation (C/C++)
+- Write a function to get an angle between clock hands.
+- [LC 778](../../Algorithms/Graph/SwimInRisingWater.cpp)
+
 ### Business related
 - Robotics planning question 
 - How would you tackle this open-ended challenge for self-driving cars?
