@@ -1,3 +1,5 @@
+## Basic Knowledge
+
 There is no concept of an unsigned shift in Python, since integers have infinite precision.
 
 - Be very comfortable with the **bitwise operators**, particularly XOR.
@@ -5,6 +7,19 @@ There is no concept of an unsigned shift in Python, since integers have infinite
 - Understand **signedness** and its implications to **shifting**.
 - Consider using a **cache** to accelerate operations by using it to brute-force small inputs.
 - *x & 1*表示取数字的奇偶数。 
+
+### Number of 1 bits (Hamming Weight)
+
+```cpp
+int hammingWeight(uint32_t n) {
+    int res = 0;
+    for (int i = 0; i < 32; ++i) {
+        res += n & 1;
+        n = n >> 1;
+    }
+    return res;
+}
+```
 
 ## Questions
 - [x] The [parity of a binary word](ParityOfWord.py) is 1 if the number of 1s in the word is odd;
