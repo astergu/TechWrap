@@ -1,4 +1,4 @@
-#include "graph.h"
+#include "Graph.h"
 #include <queue>
 #include <iostream>
 using namespace std;
@@ -33,4 +33,28 @@ void Graph::bfs(int s) {
 }
 
 void Graph::dfs(int s) {
+    vector<bool> visited(V, false);
+    cout << s << endl;
+    dfsUtil(s, visited);
+}
+
+void Graph::dfsUtil(int s, vector<bool>& visited) {
+    visited[s] = true;
+    for (list<int>::iterator it = adj[s].begin(); it != adj[s].end(); ++it) {
+        if (!visited[*it]) {
+            cout << *it << endl; 
+            dfsUtil(*it, visited);
+        }
+    }
+}
+
+
+void Graph::printGraph() {
+    for (int i = 0; i < V; ++i) {
+        cout << i;
+        for (list<int>::iterator it = adj[i].begin(); it != adj[i].end(); ++it) {
+            cout << "->" << *it;
+        }
+        cout << endl;
+    }
 }

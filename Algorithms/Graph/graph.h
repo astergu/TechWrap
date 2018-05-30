@@ -13,6 +13,10 @@ public:
 
     void bfs(int s);
     void dfs(int s);
+    void printGraph();
+
+private:
+    void dfsUtil(int s, vector<bool>& visited);
 
 private:
     int V;
