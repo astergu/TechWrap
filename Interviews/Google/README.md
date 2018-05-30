@@ -1,4 +1,51 @@
 Google面试准备的试题。
+## Topic Cover Plan
+### Algorithms
+
+CLRS
+
+- **Binary Search**
+- **BFS and DFS**
+- **Sorting**
+- **Divide-and-Conquer**
+- **Dynamic Programming**
+- **Greediness**
+- **Recursion**
+- **Others**
+    - **Dijkstra**
+    - **A***
+
+### Data Structures
+
+CLRS
+
+*implement a range of data structures using an array (especially hash maps and hash tables)*
+
+- Array
+- Linked List
+- Hash Set
+- Hash Map
+- Hash Table
+- Stack
+- Queue
+- Trees
+- Heap
+- Graph
+    - three ways to represent a graph in memory (objects and pointers, matrix, adjacency list), familiarize yourself with each representation and its pros and cons. 
+    - distance, search, connectivity, cycle-detection
+
+### Problem Solving
+
+Programming Pearls
+
+### System Design
+
+Introduction to Information Retrieval
+
+what Google is at its core
+
+### Operation Systems
+
 
 ## GeeksforGeeks Questions
 

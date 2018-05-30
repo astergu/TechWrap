@@ -5,6 +5,29 @@ For short arrays, e.g., 10 or fewer elements, insertion sort is easier to code a
 
 - For **specialized input**, e.g., a very small range of values, or a small number of values, it's possible to sort in *O(n)* time rather than *O(nlogn)* time.
 
+## Basic Practice
+
+**Selection Sort**
+```cpp
+void selectionSort(int arr[], int n)
+{
+    int i, j, min_idx;
+ 
+    // One by one move boundary of unsorted subarray
+    for (i = 0; i < n - 1; i++)
+    {
+        // Find the minimum element in unsorted array
+        min_idx = i;
+        for (j = i + 1; j < n; j++)
+          if (arr[j] < arr[min_idx])
+            min_idx = j;
+ 
+        // Swap the found minimum element with the first element
+        swap(&arr[min_idx], &arr[i]);
+    }
+}
+```
+
 ### Compute the Intersection of Two Sorted Arrays
 
 **Write a program which takes as input two sorted arrays, and returns a new array containing elements that are present in both of the input arrays. The input arrays may have duplicate entries, but the returned array should be free of duplicates.** For example, the input is <2, 3, 3, 5, 5, 6, 7, 7, 8, 12> and <5, 5, 6, 8, 8, 9, 10, 10>, your output should be <<5, 6, 8>.

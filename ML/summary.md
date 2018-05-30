@@ -1,5 +1,13 @@
+# 数学基础
+
+向量内积的几何意义是两个向量之间的接近程度，内积越大，向量越接近，即夹角越小。
+
+
 # 工业界常见机器学习算法总结
 
+## Clustering问题
+
+## 半监督学习Semi-Supervised Learning
 
 ## Linear Regression 线性回归
 

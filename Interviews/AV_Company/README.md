@@ -5,7 +5,7 @@
     - Description: We are planning an orienteering game. The aim of this game is to arrive at the goal (G) from the start (S) with the shortest distance.
 However, the players have to pass all the checkpoints (@) on the map.
 In this problem, an orienteering map is to be given.
-    - [http://www.cnblogs.com/crazyacking/p/4474932.html](http://www.cnblogs.com/crazyacking/p/4474932.html)
+    - [http://www.cnblogs.com/crazyacking/p/4474932.html ](http://www.cnblogs.com/crazyacking/p/4474932.html)
     - **Calculate the minimum distance from the start to the goal with passing all the checkpoints.**
 - Given a set of 2D points, **compute the convex hull**. (Convex hull is the smallest convex polygon containing
 the points).   
@@ -45,7 +45,7 @@ the points).
 - Math proof
     - 平面上六个点，任意三个点不共线（任意三点可以构成一个三角形）且任意两点距离唯一，求证一定存在两点，两点间线段既是一个三角形最大边又是另外一个三角形的最小边。
 - 给定每秒帧数、每帧像素数量，每个像素大小，以及压缩率，计算一个给定大小的硬盘能够存多长的视频。无trick直接算。
-- 给定一个2D array，里面是像素值，还有两个阈值D和S。如果相邻像素值差别<=D，则在同一个object里面。如果一个object里面的元素个数<=S，则将这个object里面的像素值都设为0，否则把这个object里面所有像素值设为同一个ID，具体ID值随便，非负即可。
+- 给定一个2D array，里面是像素值，还有两个阈值D和S。如果相邻像素值差别小于等于D，则在同一个object里面。如果一个object里面的元素个数 小于等于S，则将这个object里面的像素值都设为0，否则把这个object里面所有像素值设为同一个ID，具体ID值随便，非负即可。
 - 给一个API可以从一个stream读一定数量的字节到一个buffer，并且一个帧的末尾是0x00 0x00 0x01，写一个函数返回当前帧的末尾位置。
 - 任务调度问题
 - 二维平面一堆点，求最短线段的长度，必须N * logN。
@@ -62,6 +62,9 @@ the points).
 - Write a function to get an angle between clock hands.
 - [LC 778](../../Algorithms/Graph/SwimInRisingWater.cpp)
 - Flip Image
+
+## Didi Labs
+- 给定由一组points<x, y>组成的线, 如何分割成相同长度的两条线段？
 
 ### Business related
 - Robotics planning question 
