@@ -36,11 +36,21 @@ CLRS
             - **Space complexity**: O(V+E)
             - **Time**: to list all vertices adjacent to *u*: \theta (degree(*u*)).
             - **Time**: to determine if (*u*, *v*) exists: O(degree(*u*)).
-        - *adjacency matrix*: O(1)访问时间，但是需要V*V的memory，与边的多少无关。
+        - *adjacency matrix*: O(1)访问时间，但是需要V<sup>2</sup>的memory，与边的多少无关。
             - **Space**: \theta (V^2)
             - **Time**: to list all vertices adjacent to *u*: \theta (V).
             - **Time**: to determine if (*u*, *v*) exists: \theta (1).
-            -
+    - **Traversal**
+        - **Breadth-First Search (BFS)**
+            - Prim和Dijkstra算法用了相似的思想。在BFS的同时会得到BF Tree，由此可以得到*v*到起始点*s*的距离。**Space Complexity**: O(V), **Time Complexity**: O(V+E). 因为BFS过程可以扫描得到其他顶点到起始点的距离，因此BFS可以**最短路径(Shortest Path)**。
+            - BFS的应用：**Shortest Path and Minimum Spanning Tree for unweighted graph**, **Peer to Peer Networks**, **Crawlers in Search Engines**, **Social Networking Websites**, **GPS Navigation systems**, **Broadcasting in Network**, **Garbage Collection**, **Cycle detection in undirected graph** (both BFS and DFS can work for undirected graphs, but only DFS can work for directed graphs), **Ford-Fulkerson algorithm**, **To test if a graph is Bipartite**, **Path
+                Finding**, **Finding all nodes within one connected component**.
+                - check [this](https://www.geeksforgeeks.org/applications-of-breadth-first-traversal/) for details.
+        - **Depth-First Search (BFS)**: DFS的特征之一是会显示出图的parenthesis结构，时间复杂度\theta (V + E).
+            - DFS的应用：**Detecting Cycle in a Graph**, **Path Finding**, **Topological Sorting**, **To test if a graph is bipartite**, **Finding Strongly Connected Components of a graph**, **Solving puzzles with only one solution, such as mazes** 
+                - check [this](https://www.geeksforgeeks.org/applications-of-depth-first-search/) for details.
+        - **什么时候用BFS，什么使用用DFS？**
+        
     - distance, search, connectivity, cycle-detection
 
 ### Problem Solving
