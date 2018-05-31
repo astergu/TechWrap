@@ -26,8 +26,48 @@
 #include <vector>
 using namespace std;
 
-int numberOfShapes() {
-    return 0;
+bool checkSurrounding(const vector<vector<char> >& input, const vector<vector<bool> >& visited, int row, int col, int i, int j);
+
+    
+int numberOfShapes(const vector<vector<char> >& input, int row, int col) {
+    int count = 0;
+    vector<vector<bool> > visited;
+    for (int i = 0; i < row; ++i) {
+        vector<bool> colVisited;
+        for (int j = 0; j < col; ++j) {
+            colVisited.push_back(false);
+        }
+        visited.push_back(colVisited);
+    }
+
+    for (int i = 0; i < row; ++i) {
+        for (int j = 0; j < col; ++j) {
+            if (!visited[i][j]) {
+                bool ret = checkSurrounding(input, visited, row, col, i, j);
+                if (ret) {
+                    count++;
+                }
+                visited[i][j] = true;
+            }
+        }
+    }
+
+    return count;
+}
+
+
+bool checkSurrounding(const vector<vector<char> >& input, const vector<vector<bool> >& visited, int row, int col, int i, int j) {
+    if (i < 0 || i > row || j < 0 || j > col) {
+        return true;
+    }
+    if (!visited[i][j] && input[i][j] == 'X') {
+        bool x1 = checkSurrounding(input, visited, row, col, i - 1, j);
+        bool x2 = checkSurrounding(input, visited, row, col, i + 1, j);
+        bool x3 = checkSurrounding(input, visited, row, col, i, j - 1);
+        bool x4 = checkSurrounding(input, visited, row, col, i, j + 1);
+        return x1 && x2 && x3 && x4;
+    } 
+    return false;
 }
 
 
@@ -41,10 +81,7 @@ int main() {
         vector<vector<char> > input[row][col];
         for (int i = 0; i < row; ++i) {
             for (int j = 0; j < col; ++j) {
-                char tmp;
-                cin >> tmp;
-                input[i][j]
-                //cin >> input[i][j];
+                cin >> input[i][j];
             }
         }
     }

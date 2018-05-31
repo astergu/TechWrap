@@ -31,7 +31,7 @@ CLRS
 - **Trees**
 - **Heap**
 - **Graph**
-    - *Representation*: three ways to represent a graph in memory (objects and pointers, matrix, adjacency list), familiarize yourself with each representation and its pros and cons.
+    - **Representation**: three ways to represent a graph in memory (objects and pointers, matrix, adjacency list), familiarize yourself with each representation and its pros and cons.
         - [*adjacency list*](../../Algorithms/Graph/Graph.h): 灵活，可适用于weighted graph，但是如果需要得知两个点(v, w)是否存在边，必须遍历Adj[v]. 
             - **Space complexity**: O(V+E)
             - **Time**: to list all vertices adjacent to *u*: \theta (degree(*u*)).
@@ -41,17 +41,19 @@ CLRS
             - **Time**: to list all vertices adjacent to *u*: \theta (V).
             - **Time**: to determine if (*u*, *v*) exists: \theta (1).
     - **Traversal**
-        - **Breadth-First Search (BFS)**
+        - **Breadth-First Search (BFS)** [递归实现](../../Algorithms/Graph/Graph.cpp), [迭代实现](../../Algorithms/Graph/GraphUtil.cpp)
             - Prim和Dijkstra算法用了相似的思想。在BFS的同时会得到BF Tree，由此可以得到*v*到起始点*s*的距离。**Space Complexity**: O(V), **Time Complexity**: O(V+E). 因为BFS过程可以扫描得到其他顶点到起始点的距离，因此BFS可以**最短路径(Shortest Path)**。
             - BFS的应用：**Shortest Path and Minimum Spanning Tree for unweighted graph**, **Peer to Peer Networks**, **Crawlers in Search Engines**, **Social Networking Websites**, **GPS Navigation systems**, **Broadcasting in Network**, **Garbage Collection**, **Cycle detection in undirected graph** (both BFS and DFS can work for undirected graphs, but only DFS can work for directed graphs), **Ford-Fulkerson algorithm**, **To test if a graph is Bipartite**, **Path
                 Finding**, **Finding all nodes within one connected component**.
                 - check [this](https://www.geeksforgeeks.org/applications-of-breadth-first-traversal/) for details.
-        - **Depth-First Search (BFS)**: DFS的特征之一是会显示出图的parenthesis结构，时间复杂度\theta (V + E).
+        - **Depth-First Search (BFS)**: [递归实现](../../Algorithms/Graph/Graph.cpp), [迭代实现](../../Algorithms/Graph/GraphUtil.cpp)  DFS的特征之一是会显示出图的parenthesis结构，时间复杂度\theta (V + E)。如果只是检查邻接节点，那么从s出发无法连接到的点就无法遍历到，因此需要对每一个节点都调用dfs。
             - DFS的应用：**Detecting Cycle in a Graph**, **Path Finding**, **Topological Sorting**, **To test if a graph is bipartite**, **Finding Strongly Connected Components of a graph**, **Solving puzzles with only one solution, such as mazes** 
                 - check [this](https://www.geeksforgeeks.org/applications-of-depth-first-search/) for details.
         - **什么时候用BFS，什么使用用DFS？**
-        
-    - distance, search, connectivity, cycle-detection
+        - **Topological Sort 拓扑排序**: [递归实现](../../Algorithms/Graph/TopologicalSort.cpp) 只有在有向无环图(DAG)上才存在TS。一张图上可能存在多个拓扑排序。拓扑排序的第一个点是入度为0的点。采用DFS，时间复杂度\theta (V+E)
+    - **Connectivity 连通性**
+        - **strongly connected component**: *V*的一个子集，在这个子集中，任意*u*和*v*是可以互相连通的。 
+
 
 ### Problem Solving
 

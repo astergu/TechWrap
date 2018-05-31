@@ -3,6 +3,7 @@
 #include <iostream>
 using namespace std;
 
+namespace self {
 
 Graph::Graph(int V) {
     this->V = V;
@@ -57,4 +58,36 @@ void Graph::printGraph() {
         }
         cout << endl;
     }
+}
+
+GraphUsingSet::GraphUsingSet(int V) {
+    this->V = V;
+    this->adjList = new unordered_set<int>[V];
+}
+
+void GraphUsingSet::addEdge(int src, int dest) {
+    // Add an edge from src to dest.  A new
+    // element is inserted to the adjacent
+    // list of src.
+    adjList[src].insert(dest);
+ 
+    // Since graph is undirected, add an edge
+    // from dest to src also
+    adjList[dest].insert(src);
+}
+
+// Searches for a given edge in the graph
+void GraphUsingSet::searchEdge(int src, int dest)
+{
+    auto itr = adjList[src].find(dest);
+    if (itr == adjList[src].end())
+        cout << endl << "Edge from " << src
+             << " to " << dest << " not found."
+             << endl;
+    else
+        cout << endl << "Edge from " << src
+             << " to " << dest << " found."
+             << endl;
+}
+
 }
