@@ -52,12 +52,16 @@ CLRS
         - **什么时候用BFS，什么使用用DFS？**
         - **Topological Sort 拓扑排序**: [递归实现](../../Algorithms/Graph/TopologicalSort.cpp) 只有在有向无环图(DAG)上才存在TS。一张图上可能存在多个拓扑排序。拓扑排序的第一个点是入度为0的点。采用DFS，时间复杂度\theta (V+E)
     - **Connectivity 连通性**
-        - **strongly connected component**: *V*的一个子集，在这个子集中，任意*u*和*v*是可以互相连通的。 
-
+        - **strongly connected component**: *V*的一个子集，在这个子集中，任意*u*和*v*是可以互相连通的。采用两个DFS分别在G和G<sup>T</sup>里查找. 
+    - **Search 查找**
+        - **Minimum Spanning Trees 最小生成树**: Given connected graph *G* with positive edge weights, find a min weight set of edges that connects all of the vertices. [Prim algorithm]和[Kruskal algorithm]，如果用二叉堆，那么每个算法的时间复杂度胃O(ElgV)，如果。
+            nacci堆，那么Prim算法的时间复杂度可以到O(E+VlgV)。这两种算法是贪心算法。
 
 ### Problem Solving
 
 Programming Pearls
+
+- [Circular Array With One Single Complete Cycle](CircularArrayWithCompleteCycle.cpp): a sample question in Google coaching session.
 
 ### System Design
 
