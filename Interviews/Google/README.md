@@ -52,11 +52,22 @@ CLRS
         - **什么时候用BFS，什么使用用DFS？**
         - **Topological Sort 拓扑排序**: [递归实现](../../Algorithms/Graph/TopologicalSort.cpp) 只有在有向无环图(DAG)上才存在TS。一张图上可能存在多个拓扑排序。拓扑排序的第一个点是入度为0的点。采用DFS，时间复杂度\theta (V+E)
     - **Connectivity 连通性**
-        - **strongly connected component**: *V*的一个子集，在这个子集中，任意*u*和*v*是可以互相连通的。采用两个DFS分别在G和G<sup>T</sup>里查找. 
+        - **strongly connected component**: *V*的一个子集，在这个子集中，任意*u*和*v*是可以互相连通的。采用两个DFS分别在G和G<sup>T</sup>里查找.
+            -
+            基本思想：用第一次DFS把图中的节点按照叶节点到根节点的顺序压入栈中，也就是从某个节点所能达到的最深的节点先压入栈中，最后才是这个起始节点，也就是类似于拓扑排序的思想。接着，把整个图转置以后，所有的边指向反转。再把访问数组visited重置为false，把栈中的节点抛出，用这个节点去调dfs，如果是SCC，那么所有从这个节点反向可以访问得到的节点会依次被处理，直到这个SCC被完全处理。由此可以统计一张图中的SCC的组成以及个数。
     - **Search 查找**
-        - **Minimum Spanning Trees 最小生成树**: Given connected graph *G* with positive edge weights, find a min weight set of edges that connects all of the vertices. [Prim algorithm]和[Kruskal algorithm]，如果用二叉堆，那么每个算法的时间复杂度胃O(ElgV)，如果。
-            nacci堆，那么Prim算法的时间复杂度可以到O(E+VlgV)。这两种算法是贪心算法。
-
+        - **Minimum Spanning Trees 最小生成树**: Given connected, undirected graph *G* with positive edge weights, find a min weight set of edges that connects all of the vertices. [Prim algorithm]和[Kruskal algorithm]，如果用二叉堆，那么每个算法的时间复杂度胃O(ElgV)，如果用Fabonacci堆，那么Prim算法的时间复杂度可以到O(E+VlgV)。这两种算法是贪心算法。
+        - **Single-Source Shortest Paths 单源最短路径**: Given a weighted, directed graph G=(V, E) and a source vertex in the graph, find the shortest paths from source to all vertices in the given graph. *BFS is a shortest path algorithm that works on unweighted graphs. 最短路径问题通常包含一个子结构，即两点之间的最短路径包含其他的最短字子路径。
+            - [**Dijkstra算法**](../../Algorithms/Graph/Dijkstra.cpp)假设所有边的权重都是非负的(代码不保留path信息，但是可以通过增加一个parent数组来持续更新得到。该算法也可以用到有向图中。
+                - 时间复杂度O(V<sup>2</sup>)，如果输入的图是邻接表表示的，复杂度可以通过二叉堆来降低到O(ElogV)).
+            - [**Bellman-Ford算法**](../../Algorithms/Graph/BellmanFord.cpp)允许负权重的边，比Dijkstra更简单，而且更适合分布式系统。
+                - 时间复杂度O(VE)
+            - [**Floyd-Warshall算法**]
+                - 时间复杂度：O(V<sup>3</sup>)
+    - **Maximum Flow 最大流算法**
+        
+        
+        
 ### Problem Solving
 
 Programming Pearls
