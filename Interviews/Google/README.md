@@ -25,7 +25,7 @@ CLRS
 - **Linked List**
 - **Hash Set**
 - **Hash Map**
-- **Hash Table**
+- **Hash Table 哈希表**
 - **Stack**
 - **Queue**
 - **Trees**
