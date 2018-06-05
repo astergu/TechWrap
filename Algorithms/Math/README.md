@@ -1,2 +1,3 @@
 - [x] How to judge if the sum of [two integers will overflow or not](IntegerOverflow.c)? 整形相加溢出问题
     - link: [https://www.geeksforgeeks.org/check-for-integer-overflow/](https://www.geeksforgeeks.org/check-for-integer-overflow/)
+- [x] Write a function that determines whether two integers are equal without using any comparison operators.
