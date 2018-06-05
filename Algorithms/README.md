@@ -1,5 +1,15 @@
 # 算法分类
 
+## Searching and Sorting 搜索和排序 
+
+### Linear Search 线性搜索
+
+定义：给定一组数，在数组中搜索元素x。时间复杂度O(n)，现实生活中很少用，因为哺乳Binary Search或哈希表高效。
+
+### Binary Search 二分查找
+
+
+
 ## 预计算
 
 - [Subarray Sum Equals K](Array/SubarraySumEqualsK.py)

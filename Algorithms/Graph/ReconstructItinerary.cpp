@@ -55,14 +55,14 @@ public:
 
 int main() {
     vector<pair<string, string> > tickets;
-    //tickets.push_back(std::make_pair("JFK","SFO"));
-    //tickets.push_back(std::make_pair("JFK","ATL"));
-    //tickets.push_back(std::make_pair("SFO","ATL"));
-    //tickets.push_back(std::make_pair("ATL","JFK"));
-    //tickets.push_back(std::make_pair("JFK","SFO"));
-    tickets.push_back(std::make_pair("JFK", "KUL"));
-    tickets.push_back(std::make_pair("JFK", "NRT"));
-    tickets.push_back(std::make_pair("NRT", "JFK"));
+    tickets.push_back(std::make_pair("JFK","SFO"));
+    tickets.push_back(std::make_pair("ATL","SFO"));
+    tickets.push_back(std::make_pair("JFK","ATL"));
+    tickets.push_back(std::make_pair("SFO","ATL"));
+    tickets.push_back(std::make_pair("ATL","JFK"));
+    //tickets.push_back(std::make_pair("JFK", "KUL"));
+    //tickets.push_back(std::make_pair("JFK", "NRT"));
+    //tickets.push_back(std::make_pair("NRT", "JFK"));
 
     Solution s;
     vector<string> ret = s.findItinerary(tickets);
