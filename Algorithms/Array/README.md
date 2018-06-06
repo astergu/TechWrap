@@ -29,6 +29,10 @@ Each iteration decreases the size of *unclassified* by 1, and the time spent wit
 prefixSum[x] = sum of subarray(0, x) 
              = nums[0] + nums[1] + ... + nums[x] 
 
+# Summary
+
+- **PrefixSum**: 预计算子数组内元素相加之和，适用于元素连续的子数组。时间复杂度O(n)。
+
 # Algorithm Questions about Arrays
 
 reference: [tech-interview-handbook/array](https://github.com/yangshun/tech-interview-handbook/blob/master/algorithms/array.md)
