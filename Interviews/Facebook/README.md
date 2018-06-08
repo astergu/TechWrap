@@ -6,7 +6,50 @@ Facebook面试准备的试题。
 - **Onsite Interview (4~5 hours), all on white board**
     - *2 coding interviews*: 2 coding questions per interview, each interview lasts 45 min. (4 coding questions in total)
     - *System Design Interview* (45min): mostly focus on building large-scale systems. Think through the design of a complex system, especially with regards to tradeoffs arounds consistency, availability, partition tolerance.
-    - *ML Practical Design interview* (45min): give a open design question, design a machine learning solution and explain why, e.g., design a news feed ranking system.
+        - Example questions: **Design a key-value store**, **Design Google Search**, **Architect a world-wide video distribution system**, **Build Facebook chat**.
+        - **Expectations**
+            - **Arrive at an answer in the face of unusual constraints**
+            - **Visualize the entire problem and solution space**
+            - **Make trade-offs like consistency, availability, partitioning, performance**
+            - **Give ballpark numbers on QPS supported, number of machines needed using a modern computer**
+            - **How much have you thought about Facebook and some of the unique problems we face**
+        - **A Good Design**
+            - **Clearly understand the problem**
+            - **Propose a design for a system that breaks the problem down into components, that can be built independently, and you can drill into any piece of the design and talk about it in detail**
+            - **Identify the bottlenecks as the system scales and understand the limitations in your design**
+            - **Understand how to adapt the solution when requirements change**
+            - **Draw diagrams that clearly describe the relationship between the different components in the system**
+            - **Calculate (back-of-envelope) the physical resources necessary to make this system work**
+        - **How to study**
+            - To practice, take any well-known app and imagine you work for a competitor. Your job is to figure out 1) where are the most important problems for their system and 2) what are the constraints for their system. Answering these questions will help you focus on the most important problems and not worry about solving problems that are not relevant.
+            - For example, Google’s index building layer has many more components for document understanding. It would need components for extracting deep links, contact information, referrals (for page rank). On the other hand, Twitter’s index building should be simpler due to small size tweets and some rich media information for attached media. Twitter’s search is head heavy.  So a bulk of engineering efforts in designing their search should go to rapidly indexing new tweets and making them searchable.
+            - Work out the above problems on a paper and just think about the ways to break them down.  It also helps to read up on common large scale systems, like watch the public videos about memcached and learn how search engines work.  But during the interview, don’t parrot back what you read; make sure your solution actually answers the question being asked.
+
+    - *ML Practical Design interview* (45min): give a open design question, design a machine learning solution and explain why, e.g., design a [**news feed ranking system**](newsfeed_ranking.md), [**local search ranking system**](local_search_ranking.md), and [**ads targeting system**](ads_ranking.md).
+        - **Expections**
+            - **Visualize the entire problem and solution space**
+            - **Feature engineering**
+            - **Detect flaws in machine learning systems and suggest improvements**
+            - **Design consistent evaluation and deployment techniques**
+            - **Understand architecture requirements (storage, performance, etc) of your system**
+            - **Model product requirements into your ML system**
+        - **A Good Design**
+            - **Problem formulation**
+                - **Optimization function**
+                - **Supervision signal**
+            - **Feature engineering**
+                - **Data source**
+                - **Representation**
+            - **Model architecture**
+            - **Evaluation metrics**
+            - **Deployment (A/B testing)**
+        - **How to study**
+            - To practice, take any well-known app and pick a system that can benefit from machine learning. Consider that system is built using a handful of rules for a small set of people. Now, consider you want to deprecate those rules and want to take advantage of machine learning, so you can easily extend that functionality to millions of people.
+            - Brush up basic ML theory and be comfortable with concepts like **overfitting** and **regularization**.
+            - Practice ability to convert intuitive ideas to concrete features. For example: number of likes is a good idea but a better feature would use involves **normalization**, **smoothing** and **bucketing**.
+            - **Think about the problem end to end. What will you do after you train the model and the model does not perform well? How do you go about debugging an ML model? How do you evaluate and continuously deploy an ML model?**
+            - **Be ready to analyze your approach. Having a good toolset of several different algorithms and understanding the tradeoffs is helpful. For example, be able to example advantages of logistic regression compared to SVM.**
+            - **Work out the above problems on a paper and just think about the ways to break them down. It also helps to read up on common large-scale ML systems.  Watch the public videos and learn how google search ranking works.**
     - *Career Development Interview (Behavioral)* (45min): hosted by one of the leadership engineers, consist of a combination of two aspects: a conversation and coding. 
     - *Lunch* (45min): NOT an interview. 
 
