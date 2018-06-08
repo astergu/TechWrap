@@ -73,6 +73,8 @@ CLRS
 Programming Pearls
 
 - [Circular Array With One Single Complete Cycle](CircularArrayWithCompleteCycle.cpp): a sample question in Google coaching session.
+- [Find Longest Word in Dictionary that is a subsequence of a given string](FindLongestWordInDictionary.cpp): a former coding interview question.
+    - **检查词典里的每个词是否是substring**: 遍历词典，时间复杂度O(NM)。如果S长度很长，但是词典里的词很短，那么性能比较差。  
 
 ### System Design
 
