@@ -52,9 +52,7 @@ CLRS
         - **什么时候用BFS，什么使用用DFS？**
         - **Topological Sort 拓扑排序**: [递归实现](../../Algorithms/Graph/TopologicalSort.cpp) 只有在有向无环图(DAG)上才存在TS。一张图上可能存在多个拓扑排序。拓扑排序的第一个点是入度为0的点。采用DFS，时间复杂度\theta (V+E)
     - **Connectivity 连通性**
-        - **strongly connected component**: *V*的一个子集，在这个子集中，任意*u*和*v*是可以互相连通的。采用两个DFS分别在G和G<sup>T</sup>里查找.
-            -
-            基本思想：用第一次DFS把图中的节点按照叶节点到根节点的顺序压入栈中，也就是从某个节点所能达到的最深的节点先压入栈中，最后才是这个起始节点，也就是类似于拓扑排序的思想。接着，把整个图转置以后，所有的边指向反转。再把访问数组visited重置为false，把栈中的节点抛出，用这个节点去调dfs，如果是SCC，那么所有从这个节点反向可以访问得到的节点会依次被处理，直到这个SCC被完全处理。由此可以统计一张图中的SCC的组成以及个数。
+        - **strongly connected component**: *V*的一个子集，在这个子集中，任意*u*和*v*是可以互相连通的。采用两个DFS分别在G和G<sup>T</sup>里查找.            基本思想：用第一次DFS把图中的节点按照叶节点到根节点的顺序压入栈中，也就是从某个节点所能达到的最深的节点先压入栈中，最后才是这个起始节点，也就是类似于拓扑排序的思想。接着，把整个图转置以后，所有的边指向反转。再把访问数组visited重置为false，把栈中的节点抛出，用这个节点去调dfs，如果是SCC，那么所有从这个节点反向可以访问得到的节点会依次被处理，直到这个SCC被完全处理。由此可以统计一张图中的SCC的组成以及个数。
     - **Search 查找**
         - **Minimum Spanning Trees 最小生成树**: Given connected, undirected graph *G* with positive edge weights, find a min weight set of edges that connects all of the vertices. [Prim algorithm]和[Kruskal algorithm]，如果用二叉堆，那么每个算法的时间复杂度胃O(ElgV)，如果用Fabonacci堆，那么Prim算法的时间复杂度可以到O(E+VlgV)。这两种算法是贪心算法。
         - **Single-Source Shortest Paths 单源最短路径**: Given a weighted, directed graph G=(V, E) and a source vertex in the graph, find the shortest paths from source to all vertices in the given graph. *BFS is a shortest path algorithm that works on unweighted graphs. 最短路径问题通常包含一个子结构，即两点之间的最短路径包含其他的最短字子路径。
@@ -74,7 +72,12 @@ Programming Pearls
 
 - [Circular Array With One Single Complete Cycle](CircularArrayWithCompleteCycle.cpp): a sample question in Google coaching session.
 - [Find Longest Word in Dictionary that is a subsequence of a given string](FindLongestWordInDictionary.cpp): a former coding interview question.
-    - **检查词典里的每个词是否是substring**: 遍历词典，时间复杂度O(NM)。如果S长度很长，但是词典里的词很短，那么性能比较差。  
+    - [techdev](https://techdevguide.withgoogle.com/paths/foundational/find-longest-word-in-dictionary-that-subsequence-of-given-string#code-challenge), [careercup](https://www.careercup.com/question?id=5757216146587648)
+    - **检查词典里的每个词是否是substring**: 遍历词典，时间复杂度O(NM)。如果S长度很长，但是词典里的词很短，那么性能比较差。
+    - **把词典里的词按长度从大到小排列，按序匹配，只要匹配到S，就返回*: [[python]](FindLongestWordInDictionary.py)，时间复杂度O(N*len(W))，空间复杂度为s的不同字符个数。适用于词典中单词都很短的情况。 
+- [Compression and Decompression](CompressionDecompression.py): a former coding question.
+    - [techdev](https://techdevguide.withgoogle.com/paths/advanced/compress-decompression#!), 反向[[geeks]](https://www.geeksforgeeks.org/run-length-encoding/)
+    - 基本思想：
 
 ### System Design
 

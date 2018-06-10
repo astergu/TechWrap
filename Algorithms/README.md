@@ -26,7 +26,14 @@
 - **Longest Palindromic Substring最长回文子串** [[leet]](https://leetcode.com/problems/longest-palindromic-substring/description/) [[geeks1]](https://www.geeksforgeeks.org/longest-palindrome-substring-set-1/) [[geeks2]](https://www.geeksforgeeks.org/longest-palindromic-substring-set-2/)
     - 题意：在字符串s中找出最长的回文子串。
     - 分析：采用**动态规划**，最短回文子串为1。初始化一个二维bool数组dp为false，即记录的是s[i,j]是否是一个回文串。子结构为：1）dp[i][i]=true; 2）如果s[i]==s[j] and dp[i+1][j-1]=true or j - i小于2，那么dp[i][j]=true, 同时更新最长回文子串的起止位置。[python](String/LongestPalindromicSubstring.py)
+- **Encode String with Shortest Length 字符串压缩** [[leet]](https://leetcode.com/problems/encode-string-with-shortest-length/description/)
+    - 题意：用长度来指代字符串中字母的重复次数，求最短压缩的长度。
+    - 分析：因为必须得知道两边的状态，所以比较适合用**动态规划Dynamic Programming**。 [[python]](String/EncodeStringWithShortestLength.py)
+        - 检查条件1): encode之后，至少增加3个字符，所以超过5个字符才值得做encode。
+        - 检查条件2): 什么时候可以做encode？即相邻的一组子字符串相同。子字符串内部可以各不相同。
+        - 时间复杂度O(n<sup>3</sup>).
     
+
 ## 链表 Linked List
 
 - **Add Two Numbers** [[leet]](https://leetcode.com/problems/add-two-numbers/description/)
@@ -37,7 +44,7 @@
 
 ### Linear Search 线性搜索
 
-定义：给定一组数，在数组中搜索元素x。时间复杂度O(n)，现实生活中很少用，因为哺乳Binary Search或哈希表高效。
+定义：给定一组数，在数组中搜索元素x。时间复杂度O(n)，现实生活中很少用，因为不如Binary Search或哈希表高效。
 
 ### Binary Search 二分查找
 
