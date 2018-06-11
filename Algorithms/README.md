@@ -1,5 +1,13 @@
 ## 数组 Array
 
+## 数学问题
+
+- **Island Perimeter** [[leet]](https://leetcode.com/problems/island-perimeter/description/)
+    - 题意：计算二维网格里填充为1的格子的总周长。
+    - 分析：每个格子的周长为4。如果两个相邻的格子都为1，那么其总周长需要减去它们共享的两条边，即减去2。发现一个新的格子，最多可与三个格子相邻，即减去三条边乘以2的长度。最简单的，检查周边相邻的格子的状态。直接检查周边的邻居。[[python]](Math/IslandPerimeter.py)
+    
+    
+    
 ## 最小问题 Min
 
 - **Coin Change** [[leet]](https://leetcode.com/problems/coin-change/description/) **动态规划**
@@ -32,7 +40,10 @@
         - 检查条件1): encode之后，至少增加3个字符，所以超过5个字符才值得做encode。
         - 检查条件2): 什么时候可以做encode？即相邻的一组子字符串相同。子字符串内部可以各不相同。
         - 时间复杂度O(n<sup>3</sup>).
-    
+- **Decode String** [[leet]](https://leetcode.com/problems/decode-string/description/) [[techdev]](https://techdevguide.withgoogle.com/paths/advanced/compress-decompression#!)
+    - 题意：把用数字编码压缩的字符串解压。其中数字压缩的字符串可嵌套。
+    - 分析：由于压缩内容可以嵌套，
+- **Count of strings that can be formed using a, b and c**[[python]](CountOfStringsThatCanBeFormedUsingABC.py)    
 
 ## 链表 Linked List
 

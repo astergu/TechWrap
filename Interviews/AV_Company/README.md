@@ -1,5 +1,25 @@
 "AV company" referring to autonomous driving companies.
 
+## 自动驾驶中所用的状态
+
+### 车辆定位信息
+
+### 车辆状态信息
+
+### 车辆动力学模型
+
+Bicycle Model是汽车动力学模型的一种，此模型把汽车的两个前轮和两个后轮替换成一个前轮和一个后轮，用两个轮子的运动代替四个轮子的运动。汽车的状态会被描述成(x, y, \theta)，其中\theta代表汽车的朝向。另有一个\psi表示前轮的方向盘转角。
+
+## 自动驾驶中所用到的算法
+
+### 地图 Mapping
+
+### 定位算法 Localization
+
+### 规划算法 Motion Planning
+
+    一般来说，自动驾驶的规划分为两个部分，一个是global planning（也就是routing），即根据高精地图和车的起止点信息规划出的路网级的规划路线，第二个是local planning，也就是道路级别的局部规划，即给定周围的环境信息（比如周围的障碍物信息，红绿灯信息等等）来进行路径和速度规划，目标是安全舒适的行驶。
+
 ## Jingchi
 - Orienteering Game
     - Description: We are planning an orienteering game. The aim of this game is to arrive at the goal (G) from the start (S) with the shortest distance.
