@@ -1,6 +1,10 @@
+## 数学问题
+
+-
+    
 ## 数组 Array
 
-## 数学问题
+## 网格问题
 
 - **Island Perimeter** [[leet]](https://leetcode.com/problems/island-perimeter/description/)
     - 题意：计算二维网格里填充为1的格子的总周长。
@@ -43,7 +47,14 @@
 - **Decode String** [[leet]](https://leetcode.com/problems/decode-string/description/) [[techdev]](https://techdevguide.withgoogle.com/paths/advanced/compress-decompression#!)
     - 题意：把用数字编码压缩的字符串解压。其中数字压缩的字符串可嵌套。
     - 分析：由于压缩内容可以嵌套，
+- **Reverse Vowels of a String** [[leet]](https://leetcode.com/problems/reverse-vowels-of-a-string/description/)
+    - 题意：把原字符串中的元音倒序排列。
+    - 分析：最naive的方法就是找到原字符串中元音的index，然后对这些元音的index上的内容进行交换。时间复杂度O(N * 10)，N是字符串的长度，10是元音的个数。*[Time Limit Exceeded]*
+        - 优化方法：比线性复杂度更好的就是logN，因为需要交换两个同是元音的元素，所以考虑从两端向中间遍历，可以达到log的复杂度。 [[python]](String/ReverseVowelsOfString.py)
 - **Count of strings that can be formed using a, b and c**[[python]](CountOfStringsThatCanBeFormedUsingABC.py)    
+- **Remove Duplicate Letters** [[leet]](https://leetcode.com/problems/remove-duplicate-letters/description/)
+    - 题意：
+
 
 ## 链表 Linked List
 
@@ -53,13 +64,16 @@
 
 ## Searching and Sorting 搜索和排序 
 
-### Linear Search 线性搜索
-
-定义：给定一组数，在数组中搜索元素x。时间复杂度O(n)，现实生活中很少用，因为不如Binary Search或哈希表高效。
-
 ### Binary Search 二分查找
 
+- **Guess Number Higher or Lower** [[leet]](https://leetcode.com/problems/guess-number-higher-or-lower/description/)  **二分查找**[[python]](GuessNumberHigherOrLower.py)
 
+
+### Sorting 排序
+
+- **Wiggle Sort** [[leet]](https://leetcode.com/problems/wiggle-sort/description/)
+    - 题意：给定一个未排序的数组nums，原地排序使得nums[0] <= nums[1] >= nums[2]...
+    - 分析：要造成这样wiggle的效果，应该是正常排序以后，再依次交换相邻的两个元素就可以达到，比如交换正常排完序的结果1，2，3，4等即可。[[python]](Sorting/WiggleSort.py)
 
 ## 预计算
 
@@ -79,3 +93,9 @@
 
 # Dynamic Programming 动态规划算法
 - [Longest Palindrome Substring](String/LongestPalindromeSubstring.py)
+
+
+## 系统设计问题
+
+- **Encode and Decode TinyURL** [[leet]](https://leetcode.com/problems/encode-and-decode-tinyurl/description/)
+    - 题意：
