@@ -53,8 +53,11 @@
         - 优化方法：比线性复杂度更好的就是logN，因为需要交换两个同是元音的元素，所以考虑从两端向中间遍历，可以达到log的复杂度。 [[python]](String/ReverseVowelsOfString.py)
 - **Count of strings that can be formed using a, b and c**[[python]](CountOfStringsThatCanBeFormedUsingABC.py)    
 - **Remove Duplicate Letters** [[leet]](https://leetcode.com/problems/remove-duplicate-letters/description/)
-    - 题意：
-
+    - 题意：移除重复的字母使得字符串里的同一字母只出现一次，并且需要确保返回的结果是所有可能的结果里字典序里最小的。
+    - 分析：
+        - **naive**: 可以采用**贪心算法**，时间复杂度O(k*n)，其中k为字符串中唯一字符的个数，n为字符串的长度。枚举字符串前缀，直到遇到首个唯一字符为止，从前缀中挑选初最小的字符作为首字符。然后从剩余字符串中移除所有与首字母相同的字母。重复此过程，直到选出所有唯一字符为止。
+        - **优化**: 使用**stack**数据结构对上述算法进行优化，可以使时间复杂度缩减为O(n)。首先计算字符串中每个字符出现的次数，得到字典counter，遍历字符串s，记当前字符为c，将counter[c] - 1。如果c已经在stack中，继续遍历。将字符c与栈顶元素top进行比较，若top > c并且counter[top]>0则弹栈，重复此过程，将c入栈。[[python]](String/RemoveDuplicateLetters.py)
+        
 
 ## 链表 Linked List
 
