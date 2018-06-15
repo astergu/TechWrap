@@ -1,6 +1,8 @@
 ## 数学问题
 
--
+- **Basic Calculator** [[leet]](https://leetcode.com/problems/basic-calculator/description/)
+    - 题意：实现一个简单的计算器，输入为字符串，字符串中允许存在空格。
+    - 分析：用**stack**来实现。
     
 ## 数组 Array
 
@@ -57,7 +59,10 @@
     - 分析：
         - **naive**: 可以采用**贪心算法**，时间复杂度O(k*n)，其中k为字符串中唯一字符的个数，n为字符串的长度。枚举字符串前缀，直到遇到首个唯一字符为止，从前缀中挑选初最小的字符作为首字符。然后从剩余字符串中移除所有与首字母相同的字母。重复此过程，直到选出所有唯一字符为止。
         - **优化**: 使用**stack**数据结构对上述算法进行优化，可以使时间复杂度缩减为O(n)。首先计算字符串中每个字符出现的次数，得到字典counter，遍历字符串s，记当前字符为c，将counter[c] - 1。如果c已经在stack中，继续遍历。将字符c与栈顶元素top进行比较，若top > c并且counter[top]>0则弹栈，重复此过程，将c入栈。[[python]](String/RemoveDuplicateLetters.py)
-        
+- **Word Break II** [[leet]](https://leetcode.com/problems/word-break-ii/description/)
+    - 题意：根据词典对句子进行分词，给出全部分词可能性的集合。词典里的词可重用。
+    - 分析：采用**DFS**算法，每个字符串分为两部分，当前位置往前的部分prefix和当前位置往后的部分suffix。prefix匹配上即对剩余的字符串suffix进行词典匹配，否则中止尝试。对DFS进行剪枝的方式就是使用一个词典记录。
+    
 
 ## 链表 Linked List
 
@@ -100,5 +105,7 @@
 
 ## 系统设计问题
 
+- **LRUCache** [[leet]](https://leetcode.com/problems/lru-cache/description/) [[geeks]]https://www.geeksforgeeks.org/lru-cache-implementation/)
+    - 题意：设计一个LRU（最近最少使用）缓存机制。
 - **Encode and Decode TinyURL** [[leet]](https://leetcode.com/problems/encode-and-decode-tinyurl/description/)
     - 题意：
