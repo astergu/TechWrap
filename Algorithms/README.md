@@ -1,17 +1,25 @@
-## 数学问题
+# 数学问题
 
 - **Basic Calculator** [[leet]](https://leetcode.com/problems/basic-calculator/description/)
     - 题意：实现一个简单的计算器，输入为字符串，字符串中允许存在空格。
     - 分析：用**stack**来实现。
     
-## 数组 Array
+# 数组 Array
 
 ## 网格问题
 
 - **Island Perimeter** [[leet]](https://leetcode.com/problems/island-perimeter/description/)
     - 题意：计算二维网格里填充为1的格子的总周长。
     - 分析：每个格子的周长为4。如果两个相邻的格子都为1，那么其总周长需要减去它们共享的两条边，即减去2。发现一个新的格子，最多可与三个格子相邻，即减去三条边乘以2的长度。最简单的，检查周边相邻的格子的状态。直接检查周边的邻居。[[python]](Math/IslandPerimeter.py)
-    
+ 
+## 最大问题 Max
+
+- **Maximum XOR of Two Numbers in an Array** [[leet]](https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array/description/)
+    - 题意：求数组里的任意两个数的异或的最大值。
+    - 分析：最intuitived的方法就是依次算全部数的异或，并且取最大值。这样的时间复杂度是O(N<sup>2</sup>)，这样就会超出运行时限制。题目要求的复杂度是O(n)。 [[python]](Math/MaximumXOROfTwoNumbersInAnArray.py)
+- **Burst Balloons** [[leet]](Math/BurstBalloons.py)    
+    - 题意：按照一定顺序刺破气球，使得获得的总值最大。
+    - 分析：初步直觉是**分治**或**动态规划**。动态规划的思路可以是：如果j-i<3，那么dp[i][j] = dp[i] * ... * dp[j]，如果j - i >= 3, 那么dp[i][j] = max(dp[i][j], nums[i] * nums[k] * nums[j] + dp[i][k] + dp[k][j]). [[python]](Array/BurstBalloons.py)   
     
     
 ## 最小问题 Min
@@ -61,7 +69,7 @@
         - **优化**: 使用**stack**数据结构对上述算法进行优化，可以使时间复杂度缩减为O(n)。首先计算字符串中每个字符出现的次数，得到字典counter，遍历字符串s，记当前字符为c，将counter[c] - 1。如果c已经在stack中，继续遍历。将字符c与栈顶元素top进行比较，若top > c并且counter[top]>0则弹栈，重复此过程，将c入栈。[[python]](String/RemoveDuplicateLetters.py)
 - **Word Break II** [[leet]](https://leetcode.com/problems/word-break-ii/description/)
     - 题意：根据词典对句子进行分词，给出全部分词可能性的集合。词典里的词可重用。
-    - 分析：采用**DFS**算法，每个字符串分为两部分，当前位置往前的部分prefix和当前位置往后的部分suffix。prefix匹配上即对剩余的字符串suffix进行词典匹配，否则中止尝试。对DFS进行剪枝的方式就是使用一个词典记录。
+    - 分析：采用**DFS**算法，每个字符串分为两部分，当前位置往前的部分prefix和当前位置往后的部分suffix。prefix匹配上即对剩余的字符串suffix进行词典匹配，否则中止尝试。对DFS进行剪枝的方式就是使用一个词典记录。[[python]](String/WordBreakII.py)
     
 
 ## 链表 Linked List
