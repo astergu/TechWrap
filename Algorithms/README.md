@@ -11,7 +11,11 @@
 - **Island Perimeter** [[leet]](https://leetcode.com/problems/island-perimeter/description/)
     - 题意：计算二维网格里填充为1的格子的总周长。
     - 分析：每个格子的周长为4。如果两个相邻的格子都为1，那么其总周长需要减去它们共享的两条边，即减去2。发现一个新的格子，最多可与三个格子相邻，即减去三条边乘以2的长度。最简单的，检查周边相邻的格子的状态。直接检查周边的邻居。[[python]](Math/IslandPerimeter.py)
- 
+- **Search a 2D Matrix II** [[leet]](https://leetcode.com/problems/search-a-2d-matrix-ii/description/)
+    - 题意：在一个二维整数矩阵里搜索一个整数。矩阵的组成从上到下递增，从左到右递增。
+    - 分析：用**DFS**算法递归。
+
+
 ## 最大问题 Max
 
 - **Maximum XOR of Two Numbers in an Array** [[leet]](https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array/description/)
@@ -34,14 +38,17 @@
     - 题意：找出当前数字排列的下一个字典序比它大的数字，原地排列。
     - 分析：借助举例来让问题更清晰，比如123->132, 213->231, 321->123，首先需要找到需要开始变化的位置，观察一下，123从倒数第二位开始变化，321从第一位开始变化，规律是从后往前找出第一个符合数字增序的索引i，比如123就是2, 213就是2，321就是0。接下去要做的是，从后往前，把第一个大于i-1的数字位的数字和i-1位进行交换. [python](String/NextPermutation.py) 
 
-### 元素之和
+## 元素之和
 
 - **3Sum三数之和** [[geeks]](https://www.geeksforgeeks.org/find-a-triplet-that-sum-to-a-given-value/) [[leet]](https://leetcode.com/problems/3sum/description/) ** 利用排序减少搜索范围**
     - 题意：给定一个整数数组，寻找是否存在三个元素a,b,c，使得a,b,c相加之和等于某个给定值x？要求返回符合要求的a,b,c组合。
     - 分析：
         - **Extra memory**：最简单可以用一个map来记录已经遇到过的元素a及其index，再用两层loop来查看(x-b-c)是否在map中，如果有，则加入结果。时间复杂度O(N<sup>2</sup>)，空间复杂度O(N).
         - **Sorting**: 对数组进行排序，固定a的位置（从0到arr.size - 2），在循环内部，由后往前向内夹逼b和c。时间复杂度O(N^2)，空间复杂度O(1). [python](Array/3Sum.py)
-        
+- **Summary Ranges** [[leet]](https://leetcode.com/problems/summary-ranges/description/)
+    - 题意：给定一组已排序的整数数组，内部元素没有重复，返回其数的范围。
+    - 分析：依序遍历元素。[[python]](Array/SummaryRanges.py)
+    
 
 ## 字符串 String
 
@@ -70,7 +77,10 @@
 - **Word Break II** [[leet]](https://leetcode.com/problems/word-break-ii/description/)
     - 题意：根据词典对句子进行分词，给出全部分词可能性的集合。词典里的词可重用。
     - 分析：采用**DFS**算法，每个字符串分为两部分，当前位置往前的部分prefix和当前位置往后的部分suffix。prefix匹配上即对剩余的字符串suffix进行词典匹配，否则中止尝试。对DFS进行剪枝的方式就是使用一个词典记录。[[python]](String/WordBreakII.py)
-    
+- **Longest Absolute File Path** [[leet]](https://leetcode.com/problems/longest-absolute-file-path/description/)
+    - 题意：根据文件路径字符串来找出最长的绝对路径。
+    - 分析：用空行切割，深度用tab来记录。[[python]](String/LongestAbsoluteFilePath.py)
+
 
 ## 链表 Linked List
 
