@@ -3,7 +3,10 @@
 - **Basic Calculator** [[leet]](https://leetcode.com/problems/basic-calculator/description/)
     - 题意：实现一个简单的计算器，输入为字符串，字符串中允许存在空格。
     - 分析：用**stack**来实现。
-    
+- **Perfect Squares** [[leet]](https://leetcode.com/problems/perfect-squares/description/)
+    - 分析：[[python]](Math/PerfectSquares.py)
+        - **动态规划**: 从1到n，记录最少的square数目，时间复杂度O(n*sqrt(n))。
+
 # 数组 Array
 
 ## 网格问题
@@ -31,12 +34,22 @@
 - **Coin Change** [[leet]](https://leetcode.com/problems/coin-change/description/) **动态规划**
     - 题意：给定一组硬币可能的取值，比如[1, 2, 5], 和需要拿出的总共的钱，求最少需要的硬币数量。如果不存在，返回-1.
     - 分析：直观反应是贪心算法，先尽可能拿最大面值的硬币，直到不能拿了再取次大的硬币，实际上行不通，因为原本有答案的可能会没有答案。因此这题应该采用**动态规划**，从0到需要达到的总钱数，子结构为dp[i] = min(dp[i-coins[j]) + 1, dp[i])，两层循环，内层是coins的枚举。[python](DynamicProgramming/CoinChange.py)
+- **Meeting Rooms II** [[leet]](https://leetcode.com/problems/meeting-rooms-ii/description/)
+    - 题意：给出一组会议的起止时间，求最少需要的会议室数目。
+    - 分析：[[python]](Array/MeetingRoomsII.py)
+        - **扫描线方法**：适合一维算法问题的解决，涉及具有头尾节点的排序问题。对所有点进行标记，区分起始点和终止点，对所有点进行排序，依次遍历每个店，遇到起始点+1，遇到终止点-1，并更新记录最大值。
+        - **堆方法**
 
-## 排列问题 Permutation
+
+## 排列合并问题 Permutation
 
 - **Next Permutation** [[leet]](https://leetcode.com/problems/next-permutation/description/)
     - 题意：找出当前数字排列的下一个字典序比它大的数字，原地排列。
     - 分析：借助举例来让问题更清晰，比如123->132, 213->231, 321->123，首先需要找到需要开始变化的位置，观察一下，123从倒数第二位开始变化，321从第一位开始变化，规律是从后往前找出第一个符合数字增序的索引i，比如123就是2, 213就是2，321就是0。接下去要做的是，从后往前，把第一个大于i-1的数字位的数字和i-1位进行交换. [python](String/NextPermutation.py) 
+- **Flatten Nested List Itrator** [[leet]](https://leetcode.com/problems/flatten-nested-list-iterator/description/) 
+    - 分析：使用栈对数据进行准备。[[python]](Array/FlattenNestedListIterator.py)
+- **Merge Intervals** [[leet]](https://leetcode.com/problems/merge-intervals/description/)
+    - 分析：利用排序。
 
 ## 元素之和
 
@@ -120,8 +133,15 @@
 # Dynamic Programming 动态规划算法
 - [Longest Palindrome Substring](String/LongestPalindromeSubstring.py)
 
+# 应用题
+- **The Skyline problem** [[leet]](https://leetcode.com/problems/the-skyline-problem/description/)
+    - 题意：确定城市的轮廓线。
+    - 分析：其实本质上是确定边界的问题。
+- **Task Scheduler**
+- **Meeting Rooms** [[leet]](https://leetcode.com/problems/meeting-rooms/description/)
+    - **分析**: 有重叠即不可参加。排序即可。 
 
-## 系统设计问题
+# 系统设计问题
 
 - **LRUCache** [[leet]](https://leetcode.com/problems/lru-cache/description/) [[geeks]]https://www.geeksforgeeks.org/lru-cache-implementation/)
     - 题意：设计一个LRU（最近最少使用）缓存机制。
