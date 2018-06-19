@@ -30,6 +30,7 @@ CLRS
 - **Queue**
 - **Trees**
 - **Heap**
+    - 常见二叉堆(Binary Heap)
 - **Graph**
     - **Representation**: three ways to represent a graph in memory (objects and pointers, matrix, adjacency list), familiarize yourself with each representation and its pros and cons.
         - [*adjacency list*](../../Algorithms/Graph/Graph.h): 灵活，可适用于weighted graph，但是如果需要得知两个点(v, w)是否存在边，必须遍历Adj[v]. 

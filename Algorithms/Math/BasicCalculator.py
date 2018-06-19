@@ -35,51 +35,52 @@ class Solution(object):
         :type s: str
         :rtype: int
         """
-        stack = []
+        tokens = self.toRPN(s)
+        return self.evalRPN(tokens)
+
+    operators = ['+', '-', '*', '/']
+
+    def toRPN(self, s):
+        tokens, stack = [], []
+        number = ''
         for c in s:
-            print "%s" % c,
-            print stack
-            if c == ' ':
-                continue
-            if c in ['+', '-', '(']:
-                stack.append(c)
-            elif c.isdigit():
-                if not stack or stack[-1] not in ['+', '-']:
+            if c.isdigit():
+                number += c
+            else:
+                if number:
+                    tokens.append(number)
+                    number = ''
+                if c in self.operators:
+                    while len(stack):
+                        tokens.append(stack.pop())
                     stack.append(c)
-                elif stack[-1] in ['+', '-']:
-                    op = stack.pop()
-                    lvalue = stack.pop()
-                    res = self.apply_op(op, lvalue, c)
-                    stack.append(res)
-            elif c == ')':
-                last = stack.pop()
-                lvalue = stack.pop()
-                res = None
-                while lvalue != '(':
-                    left = stack.pop()
-                    last = self.apply_op(lvalue, left, last)
-                    lvalue = stack.pop()
-                stack.append(last)
+                elif c == '(':
+                    stack.append(c)
+                elif c == ')':
+                    while len(stack) and stack[-1] != '(':
+                        tokens.append(stack.pop())
+                    stack.pop()
+            if number:
+                tokens.append(number)
+            while len(stack):
+                tokens.append(stack.pop())
+            return tokens
 
+    def evalRPN(self, tokens):
+        operands = []
+        for token in tokens:
+            if token in self.operators:
+                y, x = operands.pop(), operands.pop()
+                operands.append(self.getVal(x, y, token))
+            else:
+                operands.append(int(token))
+        return operands[0]
 
-        #print "____________ STACK _____________"
-        #print stack
-
-        while stack and len(stack) > 1:
-            right = stack.pop()
-            op = stack.pop()
-            left = stack.pop()
-            res = self.apply_op(op, left, right)
-            stack.append(res)
-
-        return stack[-1]
-
-
-    def apply_op(self, op, lv, rv):
-        if op == '+':
-            return int(lv) + int(rv)
-        if op == '-':
-            return int(lv) - int(rv)
+    def getVal(self, x, y, operator):
+        return {
+                '+': lambda x, y: x + y,
+                '-': lambda x, y: x - y,
+                }[operator](x, y)
 
 
 class SolutionTest(unittest.TestCase):

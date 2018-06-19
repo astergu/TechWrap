@@ -2,12 +2,18 @@
 
 - **Basic Calculator** [[leet]](https://leetcode.com/problems/basic-calculator/description/)
     - 题意：实现一个简单的计算器，输入为字符串，字符串中允许存在空格。
-    - 分析：用**stack**来实现。
+    - 分析：用**stack**来实现。 [[python]](Math/BasicCalculator.py)
 - **Perfect Squares** [[leet]](https://leetcode.com/problems/perfect-squares/description/)
-    - 分析：[[python]](Math/PerfectSquares.py)
-        - **动态规划**: 从1到n，记录最少的square数目，时间复杂度O(n*sqrt(n))。
+    - 题意：给定一个数，计算最少用几个平方数来加和。
+    - 分析：**动态规划**[[python]](Math/PerfectSquares.py) 从1到n，记录最少的square数目，时间复杂度O(n*sqrt(n))。
 
 # 数组 Array
+
+## 计数问题
+
+- **Count of Smaller Numbers After Self** [[leet]](https://leetcode.com/problems/count-of-smaller-numbers-after-self/description/)
+    - 分析：
+
 
 ## 网格问题
 
@@ -17,7 +23,8 @@
 - **Search a 2D Matrix II** [[leet]](https://leetcode.com/problems/search-a-2d-matrix-ii/description/)
     - 题意：在一个二维整数矩阵里搜索一个整数。矩阵的组成从上到下递增，从左到右递增。
     - 分析：用**DFS**算法递归。
-
+- **Count Negative Integers in Row/Column-Wise Sorted Matrix**
+    - 分析：时间复杂度O(m+n) [[python]](Array/CountNegativeIntegersInSortedMatrix.py)
 
 ## 最大问题 Max
 
@@ -39,7 +46,14 @@
     - 分析：[[python]](Array/MeetingRoomsII.py)
         - **扫描线方法**：适合一维算法问题的解决，涉及具有头尾节点的排序问题。对所有点进行标记，区分起始点和终止点，对所有点进行排序，依次遍历每个店，遇到起始点+1，遇到终止点-1，并更新记录最大值。
         - **堆方法**
+- **Find the K Smallest Items in an Array**
+    - 分析：
+        - **排序**（比如快排）：时间复杂度O(nlogn).
+        - **选择排序**：时间复杂度O(nk).
+        - **堆算法 Max Heap**：时间复杂度O(k+(n-k)logk).
 
+
+## Kth问题
 
 ## 排列合并问题 Permutation
 
@@ -50,6 +64,8 @@
     - 分析：使用栈对数据进行准备。[[python]](Array/FlattenNestedListIterator.py)
 - **Merge Intervals** [[leet]](https://leetcode.com/problems/merge-intervals/description/)
     - 分析：利用排序。
+- **Subsets** [[leet]](https://leetcode.com/problems/subsets/description/)
+    - 分析： [[python]](Array/Subsets.py), [[c++]](Array/Subsets.cpp)
 
 ## 元素之和
 
@@ -93,7 +109,8 @@
 - **Longest Absolute File Path** [[leet]](https://leetcode.com/problems/longest-absolute-file-path/description/)
     - 题意：根据文件路径字符串来找出最长的绝对路径。
     - 分析：用空行切割，深度用tab来记录。[[python]](String/LongestAbsoluteFilePath.py)
-
+- **Wildcard Matching** [[leet]](https://leetcode.com/problems/wildcard-matching/description/)
+    - 分析：采用动态规划 [[python]](String/WildcardMatching.py)
 
 ## 链表 Linked List
 
@@ -101,27 +118,35 @@
     - 题意：两个非负整数是用两个链表来表示的，数据是reverse order存储的，每个节点包含一个数字，把这两个数相加并且以链表返回。
     - 分析：实现问题，用一个carry记录进位. [python](LinkedList/AddTwoNumbers.py)
 
-## Searching and Sorting 搜索和排序 
+# Searching and Sorting 搜索和排序 
 
-### Binary Search 二分查找
+## Binary Search 二分查找
 
 - **Guess Number Higher or Lower** [[leet]](https://leetcode.com/problems/guess-number-higher-or-lower/description/)  **二分查找**[[python]](GuessNumberHigherOrLower.py)
 
 
-### Sorting 排序
+## Sorting 排序
 
 - **Wiggle Sort** [[leet]](https://leetcode.com/problems/wiggle-sort/description/)
     - 题意：给定一个未排序的数组nums，原地排序使得nums[0] <= nums[1] >= nums[2]...
     - 分析：要造成这样wiggle的效果，应该是正常排序以后，再依次交换相邻的两个元素就可以达到，比如交换正常排完序的结果1，2，3，4等即可。[[python]](Sorting/WiggleSort.py)
+- **Selection Sort** [[python]](Sorting/SelectionSort.py)  [[c++]](Sorting/SelectionSort.cpp) 
+- **Heap Sort** [[python]](Sorting/HeapSort.py)  [[c++]](Sorting/HeapSort.cpp)
+- **Quick Sort** 
 
-## 预计算
+# 预计算
 
 - [Subarray Sum Equals K](Array/SubarraySumEqualsK.py)
     - 题目：找出一个数组中的连续元素之和等于K的子数组的个数。
 
-## DFS/BFS
+# DFS/BFS
 
 - **Number of Islands**: [Python](Graph/NumberOfIslands.py), [C++](Graph/NumberOfIslands.cpp)
+
+# Tree 树
+
+- **Lowest Common Ancestor of a Binary Search Tree** [[python]](Tree/LowestCommonAncestorOfBST.py)
+- **Lowest COmmon Ancestor of a Binary Tree** [[python]](Tree/                LowestCommonAncestorOfBT.py)
 
 # Backtracking 回溯算法
 - [Permutations in a given string](String/PermutationsOfAGivenString.py)
@@ -140,10 +165,13 @@
 - **Task Scheduler**
 - **Meeting Rooms** [[leet]](https://leetcode.com/problems/meeting-rooms/description/)
     - **分析**: 有重叠即不可参加。排序即可。 
+- **Climb Stairs** [[leet]](https://leetcode.com/problems/climbing-stairs/description/)
+    - 分析：**动态规划**，转移方程式为dp[i] = dp[i-1] + dp[i-2].
+    - 变体：假设一次可以爬升的台阶数不是固定的，而是由程序给定，比如给定总台阶数和一次爬升的台阶数{1, 3, 5}。同样用动态规划的思想。
 
 # 系统设计问题
 
 - **LRUCache** [[leet]](https://leetcode.com/problems/lru-cache/description/) [[geeks]]https://www.geeksforgeeks.org/lru-cache-implementation/)
     - 题意：设计一个LRU（最近最少使用）缓存机制。
+    - 分析：get和put都需要更新最近访问的元素，使得其标记为最近访问过。重点在于数据结构的选择，用dict来记录存放的内容，用list来处理访问的顺序。 [[python]](Design/LRUCache.py)
 - **Encode and Decode TinyURL** [[leet]](https://leetcode.com/problems/encode-and-decode-tinyurl/description/)
-    - 题意：
