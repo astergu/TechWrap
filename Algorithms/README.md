@@ -54,6 +54,8 @@
 
 
 ## Kth问题
+- **Median of Two Sorted Arrays** [[leet]](https://leetcode.com/problems/median-of-two-sorted-arrays/description/)
+    - 题意：求两个有序数组的中位数。时间复杂度要求O(m+n). [[python]](Array/MedianOfTwoSortedArrays.py)
 
 ## 排列合并问题 Permutation
 
@@ -68,8 +70,8 @@
     - 分析： [[python]](Array/Subsets.py), [[c++]](Array/Subsets.cpp)
 
 ## 元素之和
-
-- **3Sum三数之和** [[geeks]](https://www.geeksforgeeks.org/find-a-triplet-that-sum-to-a-given-value/) [[leet]](https://leetcode.com/problems/3sum/description/) ** 利用排序减少搜索范围**
+- **Two Sum 两数之和**  [[python]](Array/TwoSum.py)
+- **3Sum 三数之和** [[geeks]](https://www.geeksforgeeks.org/find-a-triplet-that-sum-to-a-given-value/) [[leet]](https://leetcode.com/problems/3sum/description/) ** 利用排序减少搜索范围**
     - 题意：给定一个整数数组，寻找是否存在三个元素a,b,c，使得a,b,c相加之和等于某个给定值x？要求返回符合要求的a,b,c组合。
     - 分析：
         - **Extra memory**：最简单可以用一个map来记录已经遇到过的元素a及其index，再用两层loop来查看(x-b-c)是否在map中，如果有，则加入结果。时间复杂度O(N<sup>2</sup>)，空间复杂度O(N).
@@ -77,11 +79,18 @@
 - **Summary Ranges** [[leet]](https://leetcode.com/problems/summary-ranges/description/)
     - 题意：给定一组已排序的整数数组，内部元素没有重复，返回其数的范围。
     - 分析：依序遍历元素。[[python]](Array/SummaryRanges.py)
-    
 
-## 字符串 String
+## 异常值
+- **Single Number**   [[leet]](https://leetcode.com/problems/single-number/description/)  [[python]](Array/SingleNumberII.py)
+- **Single Number II** [[leet]](https://leetcode.com/problems/single-number-ii/description/)
+    - 题意：寻找一个数组中只出现一次的元素，其余元素均出现三次。要求线性时间复杂度，不使用额外空间。
+    - 分析：利用一个数和它本身的异或为0这条原理，所以一个数出现两次的异或会是0。[[python]](Array/SingleNumberII.py)
 
-- **Longest Palindromic Substring最长回文子串** [[leet]](https://leetcode.com/problems/longest-palindromic-substring/description/) [[geeks1]](https://www.geeksforgeeks.org/longest-palindrome-substring-set-1/) [[geeks2]](https://www.geeksforgeeks.org/longest-palindromic-substring-set-2/)
+
+
+# 字符串 String
+
+- **Longest Palindromic Substring 最长回文子串** [[leet]](https://leetcode.com/problems/longest-palindromic-substring/description/) [[geeks1]](https://www.geeksforgeeks.org/longest-palindrome-substring-set-1/) [[geeks2]](https://www.geeksforgeeks.org/longest-palindromic-substring-set-2/)
     - 题意：在字符串s中找出最长的回文子串。
     - 分析：采用**动态规划**，最短回文子串为1。初始化一个二维bool数组dp为false，即记录的是s[i,j]是否是一个回文串。子结构为：1）dp[i][i]=true; 2）如果s[i]==s[j] and dp[i+1][j-1]=true or j - i小于2，那么dp[i][j]=true, 同时更新最长回文子串的起止位置。[python](String/LongestPalindromicSubstring.py)
 - **Encode String with Shortest Length 字符串压缩** [[leet]](https://leetcode.com/problems/encode-string-with-shortest-length/description/)
@@ -111,6 +120,14 @@
     - 分析：用空行切割，深度用tab来记录。[[python]](String/LongestAbsoluteFilePath.py)
 - **Wildcard Matching** [[leet]](https://leetcode.com/problems/wildcard-matching/description/)
     - 分析：采用动态规划 [[python]](String/WildcardMatching.py)
+- **Word Search** [[leet]](https://leetcode.com/problems/word-search/description/)
+    - 题意：给定一个二维数组，元素为字符，找出一个词是否在此数组中。词可以由数组中相邻的元素组成，相邻表示横向或纵向可连接。同一个字符只能被使用一次。
+    - 分析：递归搜索，采用**DFS**。 [[python]](String/WordSearch.py)
+- **Valid Parenthesis String** [[leet]](https://leetcode.com/problems/valid-parenthesis-string/description/)
+    - 题意：确定给定的字符串（只包含(,),*）是否符合规则，即括号是否匹配。*可以被看做是(,)或者被忽略。
+    - 分析：[[python]](String/ValidParenthesisString.py)  [[c++]](String/ValidParthesisString.cpp)
+- **Valid Parentheses** [[leet]](https://leetcode.com/problems/valid-parentheses/description/) 
+    - 分析：用栈实现。[[python]](String/ValidParentheses.py)
 
 ## 链表 Linked List
 
@@ -134,6 +151,7 @@
 - **Heap Sort** [[python]](Sorting/HeapSort.py)  [[c++]](Sorting/HeapSort.cpp)
 - **Quick Sort** 
 
+
 # 预计算
 
 - [Subarray Sum Equals K](Array/SubarraySumEqualsK.py)
@@ -144,9 +162,12 @@
 - **Number of Islands**: [Python](Graph/NumberOfIslands.py), [C++](Graph/NumberOfIslands.cpp)
 
 # Tree 树
-
+- **Preorder Traversal**  [[python]](Tree/BinaryTreePreorderTraversal.py)
+- **Inorder Traversal**  [[python]](Tree/BinaryTreeInorderTraversal.py)
+- **Postorder Traversal**  [[python]](Tree/BinaryTreePostorderTraversal.py)
 - **Lowest Common Ancestor of a Binary Search Tree** [[python]](Tree/LowestCommonAncestorOfBST.py)
 - **Lowest COmmon Ancestor of a Binary Tree** [[python]](Tree/                LowestCommonAncestorOfBT.py)
+- **Unique Binary Search Trees** [[python]](Tree/UniqueBinarySearchTrees.py)
 
 # Backtracking 回溯算法
 - [Permutations in a given string](String/PermutationsOfAGivenString.py)
@@ -162,12 +183,15 @@
 - **The Skyline problem** [[leet]](https://leetcode.com/problems/the-skyline-problem/description/)
     - 题意：确定城市的轮廓线。
     - 分析：其实本质上是确定边界的问题。
-- **Task Scheduler**
+- **Task Scheduler**  
+    - 分析：总共需要多久取决于出现次数最多的任务，因为这同一任务之间必须要有间隔. [[c++]](Array/TaskScheduler.cpp)
 - **Meeting Rooms** [[leet]](https://leetcode.com/problems/meeting-rooms/description/)
     - **分析**: 有重叠即不可参加。排序即可。 
 - **Climb Stairs** [[leet]](https://leetcode.com/problems/climbing-stairs/description/)
     - 分析：**动态规划**，转移方程式为dp[i] = dp[i-1] + dp[i-2].
     - 变体：假设一次可以爬升的台阶数不是固定的，而是由程序给定，比如给定总台阶数和一次爬升的台阶数{1, 3, 5}。同样用动态规划的思想。
+- **Trapping Rain Water** [[leet]](https://leetcode.com/problems/trapping-rain-water/description/)
+    - 分析：记录当前位置的左侧和右侧的最高高度。[[python]](Array/TrappingRainWater.py)
 
 # 系统设计问题
 

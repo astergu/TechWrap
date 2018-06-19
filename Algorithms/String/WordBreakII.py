@@ -64,6 +64,31 @@ class Solution(object):
 
         return dfs(s)
 
+    def wordBreak2(self, s, wordDict):
+        """
+        :type s: str
+        :type wordDict: List[str]
+        :rtype: List[str]
+        """
+        wdset = set(wordDict)
+        memo = {}
+        ans = []
+        def helper(i):
+            if i in memo:
+                return memo[i]
+            if s[:i] in wdset:
+                ans = [s[:i]]
+            else:
+                ans = []
+            for j in range(1,i):
+                if s[j:i] in wdset:
+                    tmp = helper(j)
+                    for st in tmp:
+                        ans.append(st + " "+ s[j:i])
+            memo[i] = ans
+            return ans
+        return helper(len(s))
+
 
 if __name__ == '__main__':
     sol = Solution()
