@@ -58,8 +58,7 @@ Facebook面试准备的试题。
     - 利用prefixSum，只遍历一次便可得到全部的subarray sum，另外利用额外的map来记录之前的结果，最终时间复杂度为O(N)，空间复杂度为O(N)。
 - [x] [Minimum Window Substring](../../Algorithms/String/MinimumWindowSubstring.py)
 - [x] [Subarray with Given Sum](../../Algorithms/Array/SubarrayWithGivenSum.py)
-- [] [Schedule Tasks](ScheduleTasks.py)
-    - Description: 
+- [x] [Schedule Tasks](../../Algorithms/Array/TaskScheduler.cpp)
 
 
 ## Glassdoor Software Engineer Questions
