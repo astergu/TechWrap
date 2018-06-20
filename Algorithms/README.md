@@ -134,6 +134,8 @@
 - **Add Two Numbers** [[leet]](https://leetcode.com/problems/add-two-numbers/description/)
     - 题意：两个非负整数是用两个链表来表示的，数据是reverse order存储的，每个节点包含一个数字，把这两个数相加并且以链表返回。
     - 分析：实现问题，用一个carry记录进位. [python](LinkedList/AddTwoNumbers.py)
+- **Merge k Sorted Lists**  [[leet]](https://leetcode.com/problems/merge-k-sorted-lists/description/)
+    - 分析：
 
 # Searching and Sorting 搜索和排序 
 
