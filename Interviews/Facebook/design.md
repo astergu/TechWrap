@@ -54,7 +54,7 @@ Source: https://github.com/jwasham/coding-interview-university#system-design-sca
 
 [News feed](https://www.google.com/search?q=what+is+facebook+news+feed&oq=what+is+facebook+news+feed&aqs=chrome..69i57j0l2j69i60j0l2.4023j0j1&sourceid=chrome&ie=UTF-8)就是在你的主页上出现的一系列的文章、视频、图片、评论、点赞等。
 
-基本流程如图：![basic work flow](https://drive.google.com/open?id=1illYm8h68_p0SWnQB4MCialMvvEWiCw2)
+基本流程如图：![basic work flow](../../img/news feed.png)
 
 ## Requirements Gathering 需求收集
 
