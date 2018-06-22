@@ -56,6 +56,7 @@ Source: https://github.com/jwasham/coding-interview-university#system-design-sca
 
 ### Tutorials
 
+- [System Design Interview Course](https://www.hiredintech.com/classrooms/system-design/lesson/53)
 - Scalabilty for dummies 
     - [Clones](http://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones): 处理海量请求时，采用clones，由负载均衡(load balancer)负责把用户的请求分发到空闲的机器上，每台机器需要有相同的code base，而任何用户相关的数据，比如sessions, profile pictures，需要被放到外部的公共可访问的persistent cache，比如redis. 
     - [Database](http://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database): 不要采用MySQL, 因为会涉及到很多数据表的joins，引发性能下降，而采用NoSQL，比如MongoDB。
@@ -67,6 +68,13 @@ Source: https://github.com/jwasham/coding-interview-university#system-design-sca
     - [Asynchronism](http://www.lecloud.net/post/9699762917/scalability-for-dummies-part-4-asynchronism)
         - 异步方式一：把time-consuming的任务放到服务比较闲暇之时做，这样可以减少响应时间。
         - 异步方式二：有些请求无法被提前预见，因此无法像方式一那样进行预计算，方式二就是任务的异步操作。
+
+## How to deal with Outliers in the data
+
+Caching
+
+Auto-scaling: Amazon, Heroku 
+
 
 ## Real Life Examples
 
@@ -85,11 +93,20 @@ Source: https://github.com/jwasham/coding-interview-university#system-design-sca
 
 Node.js, Ruby on Rails, Angular.js, Ember.js. React.js
 
-# Design a URL Shortening Service
+### Message Queue
+
+Message queues are typically (but not always) ‘brokers’ that facilitate message passing by 
+providing a protocol or interface which other services can access. This interface connects producers which create messages and the consumers which then process them.
+
+The easiest place to start is to explain the emerging open standard protocols for message queues which are AMQP and STOMP. These are the most popular message queue standards around today and many of the message queues implement one or both of these protocols.
+
+RabbitMQ, PostgreSQL, Kafka
+
+# Task 1: Design a URL Shortening Service
 
 md5, convert to base 62
 
-# Design a simplified version of Twitter
+# Task 2: Design a simplified version of Twitter
 
 Design a simplified version of Twitter where people can post tweets, follow other people and favorite tweets. 
 
@@ -111,6 +128,15 @@ Design a simplified version of Twitter where people can post tweets, follow othe
 可以分为两个部分：
 - 逻辑层（Logic Layer）
     - 需要处理需求：`发布新tweet`, `喜欢tweet`, `follow用户`，`显示用户和tweets`。其中，前三项是写需求，最后一项是读需求，也是最频繁的需求。每天`100 million`的请求，相当于每秒`1150`个请求。
+    - 如何与前端交互：RESTful API
+        - `GET /api/users/<username>`: 返回特定用户相关的profile。
+        - `GET /api/users/<username>/tweets`: 返回特定用户发布的tweets。或是以页分隔`GET /api/users/<username>/tweets?page=4`.
+        - `GET /api/users/<username>/followers`和`GET /api/users/<username>/followees`：用户关注关系。
+        - `POST /api/users/<username>/tweets`：发布新tweets。
+        - `POST /api/users/<username>/followers`：关注用户。
+        - `GET /api/users/<username>/tweets/<tweet_id>/favorites`: 喜欢一个tweet的用户。
+        - `POST /api/users/<username>/tweets/<tweet_id>/favorites`：喜欢一个tweet。
+    
 - 数据层（Data Layer）
     - 数据：`tweets`，`users`, `favorites`. 它们的关系如下图，一个用户可以有多条tweets，也可以对多条tweets表示喜欢。用户之间是多对多的follow关系。
     - 数据存储：如果设计成关系型数据库，那么有一张`users`表，其中的列包括`userid`, `username`, `registration_date`, `password`, `email`, `devices`, etc. 另有一张`tweets`表，列包括
@@ -120,9 +146,37 @@ Design a simplified version of Twitter where people can post tweets, follow othe
     - 缓存机制（Caching）
     - 索引（Indexes） 
     - 数据分片（Data Partitioning）
-
+ - 可能的扩展思考
+    - Think about supporting a page, which shows for a given user a list of recent tweets that this user either authored or favorited, ordered by date of creation.
+    - For a given user A build a page showing the recent tweets authored by users that A is following. What would the query be, which indexes will it use and does it need more indexes to be added?
+    - 如果用户访问请求加倍，哪一块会首先成为瓶颈？怎么解决？
+        - Database首先会成为瓶颈。replication, sharding. [experiences from Instagram and Flickr](https://www.hiredintech.com/classrooms/system-design/lesson/73)
+    
 ![tweets and users](../../img/twitter.png)
 
+#  Task 3: Text Summarization
+
+[problem statement](https://www.hiredintech.com/classrooms/system-design/lesson/101)
+
+## Clarify Questions 定义问题，收集需求
+
+- `1 million requests a month`： `0.38` times per second
+- Questions:
+    - `What is the expected maximum number of simultaneous requests?` => `up to 50 requests per second`
+    - `Do you want to store the results of the processing for a longer period of time?` => `yes`
+    - `What is the expected way of presenting the results within the website and the mobile app` => `a page to show the progress, present when finished`
+    - `The size of the text articles` => `We will limit the size of the text articles to be no more than 100 KB. The summaries are meant to be no more than 1KB in size`
+    - `How will the date be used?` => `use the stored data to analyze the accuracy of our algorithms and also for some statistical goals. We will also want to show to our customers a history of their requests and the summaries that they received`
+- Storage
+    - 存储量：`100 KB * 1 million requests` = `100 GB` per month = `1.2 TB` per year
+    
+## Abstract Design 抽象设计/顶层设计
+
+- Message Queue to handle requests
+- Store the results
+
+![text summarization](../../img/text_summarization_low_level_diagram_2.png)
+    
 # Google Search是如何实现的
 
 ## 搜索词解析
