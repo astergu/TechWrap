@@ -34,7 +34,16 @@ Source: https://github.com/jwasham/coding-interview-university#system-design-sca
 - Estimation - How fast does your system need to be? How much space does it need? How much load will it experience?
 
 
-# System Design Topics
+
+# Preliminary Knowledge 
+
+## Basic Statistics
+
+- Active users of FB: **1.3 billion**
+- Active users of Twitter: **650 million**, new tweets made per day: **500 million** (15 billion per month)
+
+
+## System Design Topics
 
 - Vertical scaling
 - Horizontal scaling
@@ -42,6 +51,77 @@ Source: https://github.com/jwasham/coding-interview-university#system-design-sca
 - Load balancing
 - Database replication
 - Database partitioning
+
+
+
+### Tutorials
+
+- Scalabilty for dummies 
+    - [Clones](http://www.lecloud.net/post/7295452622/scalability-for-dummies-part-1-clones): 处理海量请求时，采用clones，由负载均衡(load balancer)负责把用户的请求分发到空闲的机器上，每台机器需要有相同的code base，而任何用户相关的数据，比如sessions, profile pictures，需要被放到外部的公共可访问的persistent cache，比如redis. 
+    - [Database](http://www.lecloud.net/post/7994751381/scalability-for-dummies-part-2-database): 不要采用MySQL, 因为会涉及到很多数据表的joins，引发性能下降，而采用NoSQL，比如MongoDB。
+        - 可能涉及到的技术: sharding, denormalization, SQL tuning
+    - [Cache](http://www.lecloud.net/post/9246290032/scalability-for-dummies-part-3-cache): 使用基于内存的cache，比如Memcached或者是redis，永远不要用基于文件的cache。
+        - 基本知识：redis每秒读写操作数
+        - 缓存方式一 Cached Database Objects：每次对数据库进行查询，就把对应的查询结果缓存。下一次再遇到同样的query，先检查是否在cache中。这种缓存方式的问题是有效期expiration。什么时候把缓存结果删除？比如一个复杂query的结果。以及如果某部分查询结果发生变化，比如一个table cell，是否需要删除所有与之相关的缓存结果？
+        - 缓存方式二Cached Objects：比如user sessions, fully rendered blog articles, activity streams, user-friend relationships。
+    - [Asynchronism](http://www.lecloud.net/post/9699762917/scalability-for-dummies-part-4-asynchronism)
+        - 异步方式一：把time-consuming的任务放到服务比较闲暇之时做，这样可以减少响应时间。
+        - 异步方式二：有些请求无法被提前预见，因此无法像方式一那样进行预计算，方式二就是任务的异步操作。
+
+## Real Life Examples
+
+[hiredintech](https://www.hiredintech.com/classrooms/system-design/lesson/61)
+[How big companies use relational databases](https://www.hiredintech.com/classrooms/system-design/lesson/69)
+
+- Twitter: real time feed of the tweets by the people you’re following
+- Google: instantly returning the pages matching any search query (Search)
+- Youtube: Storing and serving massive amounts of video data 
+- Google News: Aggregating the world’s news by topic
+- Facebook: serving massive amounts of photos
+
+# Latest Technologies and Common Patterns
+
+## Modern Web Frameworks && How They Work
+
+Node.js, Ruby on Rails, Angular.js, Ember.js. React.js
+
+# Design a URL Shortening Service
+
+md5, convert to base 62
+
+# Design a simplified version of Twitter
+
+Design a simplified version of Twitter where people can post tweets, follow other people and favorite tweets. 
+
+## Clarify Questions 定义问题，收集需求
+
+- How many users do we expect this system to handle?  `10 million users, 100 million requests per day`
+- How connected will these users be? `follow 200 users on average`
+- How many tweets a day, and in what percentage do they get "favorite"?  `10 million tweets per day, each tweet be favorited twice on average`
+- How long can a tweet be?
+- What content can a user tweet, text, images, videos?
+
+
+- **Summary**
+    - The user graph is with `10 million` nodes and `2 billion` edges (connections).
+    - `10 million` tweets per day, `20 million` favorited tweets. 
+
+## Abstract Design 抽象设计/顶层设计
+
+可以分为两个部分：
+- 逻辑层（Logic Layer）
+    - 需要处理需求：`发布新tweet`, `喜欢tweet`, `follow用户`，`显示用户和tweets`。其中，前三项是写需求，最后一项是读需求，也是最频繁的需求。每天`100 million`的请求，相当于每秒`1150`个请求。
+- 数据层（Data Layer）
+    - 数据：`tweets`，`users`, `favorites`. 它们的关系如下图，一个用户可以有多条tweets，也可以对多条tweets表示喜欢。用户之间是多对多的follow关系。
+    - 数据存储：如果设计成关系型数据库，那么有一张`users`表，其中的列包括`userid`, `username`, `registration_date`, `password`, `email`, `devices`, etc. 另有一张`tweets`表，列包括
+    `tweet_id`, `content`, `published_by`等，其中`publish_by`对应的是`userid`。还有可能有一张`favorite`表，存储的是`userid`, `tweet_id`和`create_time`. 还有一张表存储的是用户互相关注的
+    信息，比如`userid`, `userid`, `follow_at`. 
+- 性能
+    - 缓存机制（Caching）
+    - 索引（Indexes） 
+    - 数据分片（Data Partitioning）
+
+![tweets and users](../../img/twitter.png)
 
 # Google Search是如何实现的
 
@@ -54,7 +134,14 @@ Source: https://github.com/jwasham/coding-interview-university#system-design-sca
 
 [News feed](https://www.google.com/search?q=what+is+facebook+news+feed&oq=what+is+facebook+news+feed&aqs=chrome..69i57j0l2j69i60j0l2.4023j0j1&sourceid=chrome&ie=UTF-8)就是在你的主页上出现的一系列的文章、视频、图片、评论、点赞等。
 
-基本流程如图：![basic work flow](../../img/news_feed.png)
+基本流程如图：
+
+![basic work flow](../../img/news_feed.png)
+
+首先把这个大的系统设计问题分解成子问题。仅看后端设计，包含三个子问题：
+- **数据模型**: 需要有某种方式来保存用户数据和feed数据，数据模型会根据需求而不同，同时也会影响数据的读写效率。
+- **Feed排序**: 对于每个用户，可能有成百上千的feed内容，选择哪些重要的排在前面优先给用户看到就是feed排序的任务。
+- **Feed发布**: 海量用户的时候，规模是个问题。
 
 ## Requirements Gathering 需求收集
 
@@ -85,6 +172,8 @@ Source: https://github.com/jwasham/coding-interview-university#system-design-sca
 
 - **使用什么样的数据库?**
     - 数据是结构化的
+- **可能需要处理的查询需求**
+    - 获取任意两个用户之间的共同用户，确认两者之间是否是朋友关系，获取一个用户的所有朋友。
 - **设计必要的数据表，及其关系**
     - `users`, `posts`, `likes`, `follows`, `comments`
     - 基本类型`users`: 对于每一个用户，我们可以存储userID，name, registration date等。
@@ -100,6 +189,9 @@ Source: https://github.com/jwasham/coding-interview-university#system-design-sca
 - 如果post中包含图片或视频，它们应该怎么处理？ 
 - posts中的评论如何获取？名人文章的评论可能会包含成百上千的评论。
 - 用户如何获取新的内容？向下无限滚动？还是点击next？
+- 如果获取用户的所有feeds，那么可能需要最少两张表（friends list和feed list）的join。
+- Feed publishing: **push** and **pull**.
+
 
 ## Feed Ranking 信息流排序
 
@@ -109,7 +201,9 @@ Source: https://github.com/jwasham/coding-interview-university#system-design-sca
     - 按热度排序（Popularity）
 - 怎么定义哪篇文章更重要？通常是定义一系列特征来对posts进行排序，比如2013年以前，Facebook采用EdgeRank算法来决定哪些文章将被展示在用户的timeline上。
 - **EdgeRank**算法主要包含三类基本信号：`affinity score`, `edge weight`和`time deca`, `edge weight`和`time decay`. 
-
+    - `affinity score`: explicit interactions like comment, like, tag, share, click, time factor, etc.
+    
+    
 ## Additional Features 附加的功能
 
 - **Tagging feature**

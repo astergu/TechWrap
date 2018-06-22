@@ -6,7 +6,7 @@ Facebook面试准备的试题。
 - **Onsite Interview (4~5 hours), all on white board**
     - *2 coding interviews*: 2 coding questions per interview, each interview lasts 45 min. (4 coding questions in total)
     - *System Design Interview* (45min): mostly focus on building large-scale systems. Think through the design of a complex system, especially with regards to tradeoffs arounds consistency, availability, partition tolerance.
-        - Example questions: **Design a key-value store**, **Design Google Search**, **Architect a world-wide video distribution system**, **Build Facebook chat**.
+        - Example questions:  [**Design a simplified version of Twitter**](design.md#design-a-simplified-version-of-twitter), **Design a key-value store**, **Design Google Search**, **Architect a world-wide video distribution system**, **Build Facebook chat**, [**Design a URL shortening service like bit.ly**](design.md/#Design a URL Shortening Service), **Design a client-server application which allows people to play chess with one another**, **How would you store the relations in a social network like Facebook and implement a feature where one user receives notifications when their friends like the same things as they do**.
         - **Expectations**
             - Arrive at an answer in the face of unusual constraints
             - Visualize the entire problem and solution space
