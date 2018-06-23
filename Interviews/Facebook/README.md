@@ -6,7 +6,17 @@ Facebook面试准备的试题。
 - **Onsite Interview (4~5 hours), all on white board**
     - *2 coding interviews*: 2 coding questions per interview, each interview lasts 45 min. (4 coding questions in total)
     - *System Design Interview* (45min): mostly focus on building large-scale systems. Think through the design of a complex system, especially with regards to tradeoffs arounds consistency, availability, partition tolerance.
-        - Example questions:  [**Design a simplified version of Twitter**](design.md#task-2:-design-a-simplified-version-of-twitter), **Design a key-value store**, **Design Google Search**, **Architect a world-wide video distribution system**, **Build Facebook chat**, [**Design a URL shortening service like bit.ly**](design.md#task-1:-design-a-url-shortening-service), **Design a client-server application which allows people to play chess with one another**, **How would you store the relations in a social network like Facebook and implement a feature where one user receives notifications when their friends like the same things as they do**, [**Text Summarization**](design.md#task-3:-text-summarization).
+        - Example questions: 
+            - [**Design a simplified version of Twitter**](design.md#task-2:-design-a-simplified-version-of-twitter)
+            - **Design a key-value store**
+            - [**Design Google Search**](design.md#task-4:-google-search是如何实现的)
+            - [**Design a Facebook News Feed System**](design.md#task-5:-facebook-news-feed-design-信息流设计)
+            - **Architect a world-wide video distribution system**
+            - **Build Facebook chat**
+            - [**Design a URL shortening service like bit.ly**](design.md#task-1:-design-a-url-shortening-service) 
+            - **Design a client-server application which allows people to play chess with one another**
+            - **How would you store the relations in a social network like Facebook and implement a feature where one user receives notifications when their friends like the same things as they do**
+            - [**Text Summarization**](design.md#task-3:-text-summarization)
         - **Expectations**
             - Arrive at an answer in the face of unusual constraints
             - Visualize the entire problem and solution space

@@ -177,25 +177,17 @@ Design a simplified version of Twitter where people can post tweets, follow othe
 
 ![text summarization](../../img/text_summarization_low_level_diagram_2.png)
     
-# Google Search是如何实现的
+# Task 4: Google Search是如何实现的
 
 ## 搜索词解析
 
 利用语言模型把搜索关键词分解为可以在索引中查询(lookup)的词。
 
 
-# Facebook News Feed Design 信息流设计
+# Task 5: Facebook News Feed Design 信息流设计
 
 [News feed](https://www.google.com/search?q=what+is+facebook+news+feed&oq=what+is+facebook+news+feed&aqs=chrome..69i57j0l2j69i60j0l2.4023j0j1&sourceid=chrome&ie=UTF-8)就是在你的主页上出现的一系列的文章、视频、图片、评论、点赞等。
 
-基本流程如图：
-
-![basic work flow](../../img/news_feed.png)
-
-首先把这个大的系统设计问题分解成子问题。仅看后端设计，包含三个子问题：
-- **数据模型**: 需要有某种方式来保存用户数据和feed数据，数据模型会根据需求而不同，同时也会影响数据的读写效率。
-- **Feed排序**: 对于每个用户，可能有成百上千的feed内容，选择哪些重要的排在前面优先给用户看到就是feed排序的任务。
-- **Feed发布**: 海量用户的时候，规模是个问题。
 
 ## Requirements Gathering 需求收集
 
@@ -221,20 +213,58 @@ Design a simplified version of Twitter where people can post tweets, follow othe
     - Fast loading time
     - Bandwidth
     - Server costs
+- **基本数据 Statistics**
+    - Facebook feed scale: `10 billion requests a day` in 2012
+        - Photo uploads total `300 million` per day.
+        - Every `60 seconds` on Facebook: `510,000 comments` are posted, `293,000 statuses` are updated, and `136,000 photos` are uploaded.
+        - Average user creates `90` pieces of content per month
+    - Facebook user scale: 
+        - `2.2 billion monthly active users`
+        - `1.15 billion daily mobile active users`
+        - `5` new profiles created per second
+        - Average number of friends per user is `338`, median value is `200`.
+    - Summary: 假设每天新增的posts为`100 million per day`，包括status, articles, etc. 假设一篇post不包含图片和视频，近包含文字，假设一篇文章不超过1000个字符，每个字符占2个byte，
+        那么每天需要存储`200GB`的数据，每年就是`73TB`.
+- **基本模块**
+    - 逻辑组成：`user`, `posts`, `comments`, `likes`。
+    - 服务构成：
+        - `发布feed`，`查询feed`，`展示feed`，`评论feed`，`转发feed`，`喜欢feed`，和`关注其他用户`。 
+    
+## Abstract Design 抽象设计/顶层设计
 
-## Data Modelling 数据模型
+基本流程如图：
+
+![basic work flow](../../img/news_feed.png)
+
+- News Feed系统如何使用？
+    - 有两种方式：**Push** vs. **Pull**
+        - **Push**: 只要用户有的新的更新，就写到相关用户的流里，用户只需读取一次。
+        - **Pull**: 在用户获取时读取feed数据。因此，写操作只进行一次，读操作可能涉及多表的合并查询。
+    
+
+把这个大的系统设计问题分解成子问题。仅看后端设计，包含三个子问题：
+- **数据模型**: 需要有某种方式来保存用户数据和feed数据，数据模型会根据需求而不同，同时也会影响数据的读写效率。
+- **Feed排序**: 对于每个用户，可能有成百上千的feed内容，选择哪些重要的排在前面优先给用户看到就是feed排序的任务。
+- **Feed发布**: 海量用户的时候，规模是个问题。
+
+![high-level architecture](../../img/fb_news_feed.png)
+
+### Data Modelling 数据模型
 
 - **使用什么样的数据库?**
     - 数据是结构化的
 - **可能需要处理的查询需求**
     - 获取任意两个用户之间的共同用户，确认两者之间是否是朋友关系，获取一个用户的所有朋友。
+    - 获取一个用户的所有feed，获取一个用户的posts，获取一个用户的status。
+    - 获取一个feed的状态，发布时间，内容，喜欢的用户
 - **设计必要的数据表，及其关系**
     - `users`, `posts`, `likes`, `follows`, `comments`
     - 基本类型`users`: 对于每一个用户，我们可以存储userID，name, registration date等。
     - 基本类型`feed`: 对于feed类型，可以存feedId, feedType, content, metadata等。
     - 基本关系：`user-feed`关系和`friend`关系。
 
-## Feed Display 信息流展示
+
+### Feed Display 信息流展示
 
 最简单的方法就是把你follow的所有朋友的posts全部取出来，并按照时间顺序排列。但问题是：
 - 展示多少posts？
@@ -247,7 +277,7 @@ Design a simplified version of Twitter where people can post tweets, follow othe
 - Feed publishing: **push** and **pull**.
 
 
-## Feed Ranking 信息流排序
+### Feed Ranking 信息流排序
 
 - 选择设计影响排序的特征/信号
 - 如何向用户展示相关或者感兴趣的posts
@@ -258,13 +288,21 @@ Design a simplified version of Twitter where people can post tweets, follow othe
     - `affinity score`: explicit interactions like comment, like, tag, share, click, time factor, etc.
     
     
-## Additional Features 附加的功能
+### Additional Features 附加的功能
 
 - **Tagging feature**
 - **Sharing feature**
 - **Notifications feature**
 - **Trending feature**
 - **Search feature**
+
+### 可能的问题
+
+1. input/output是什么
+2. feed里图片怎么存
+3. friends怎么存
+4. 怎么做multi device sync
+
 
 ## Scalability 
 
