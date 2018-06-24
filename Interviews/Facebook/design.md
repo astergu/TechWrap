@@ -258,11 +258,20 @@ Design a simplified version of Twitter where people can post tweets, follow othe
     - 获取一个用户的所有feed，获取一个用户的posts，获取一个用户的status。
     - 获取一个feed的状态，发布时间，内容，喜欢的用户
 - **设计必要的数据表，及其关系**
+    - Feeds的特点：按类型合并，按rank排序
     - `users`, `posts`, `likes`, `follows`, `comments`
     - 基本类型`users`: 对于每一个用户，我们可以存储userID，name, registration date等。
     - 基本类型`feed`: 对于feed类型，可以存feedId, feedType, content, metadata等。
     - 基本关系：`user-feed`关系和`friend`关系。
 
+### News Feed API 设计
+
+- 获取用户的feed内容
+    - `https://www.facebook.com/user/{userid}/newsfeed`
+    - Method: `GET`, RETURN: [{id: 123, ownerid: 456, postTime: '2015-10-10T09:22:21', content:''}]
+    - 问题：
+        - 返回多少个records?
+        - 如果feed是按照ranking结果而非按照时间来排序的，怎么办呢？
 
 ### Feed Display 信息流展示
 
