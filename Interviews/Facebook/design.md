@@ -253,6 +253,13 @@ Design a simplified version of Twitter where people can post tweets, follow othe
 
 - **使用什么样的数据库?**
     - 数据是结构化的
+    - **Naive solution**: RDBMS, single-table, vertically scaled, Master-slave replication and Memcached for read throughput [twitter](https://www.slideshare.net/nkallen/q-con-3770885/9-Original_Implementation_MasterSlave_Replication_Memcached)
+        - Problems: 磁盘存储有限，容量难以扩展
+    - **Partition solution**: 根据`feed_id`, `user_id`, 或者`time`来做数据分片，查询需要对多个partitions做
+        - 重点：Partition and Index, Exploit for **Locality** (比如，时间上的locality，这样很可能只需要对一个partition做查询)
+        - Problems: Write throughput, deadlocks in MySQL
+    - **Better solution**
+        - 重点：NoSQL, Primary key partitioning, manual secondary index on `user_id`. 
 - **可能需要处理的查询需求**
     - 获取任意两个用户之间的共同用户，确认两者之间是否是朋友关系，获取一个用户的所有朋友。
     - 获取一个用户的所有feed，获取一个用户的posts，获取一个用户的status。
@@ -266,12 +273,48 @@ Design a simplified version of Twitter where people can post tweets, follow othe
 
 ### News Feed API 设计
 
+- 确认两者之间是否是朋友关系
+    - 方法名：`IsFriend`， 参数为`user_id1, user_id2`, 其中`userid1`和`userid2`分别是两个用户的id。
+    - 返回：`true`或者`false`.
+- 获取任意两个用户之间的共同用户
+    - 方法名：`GetCommonFriends`，参数为`user_id1, user_id2`
+- 获取一个用户的所有朋友
+    - 方法名：`GetAllFriends`，参数为`user_id`
 - 获取用户的feed内容
-    - `https://www.facebook.com/user/{userid}/newsfeed`
-    - Method: `GET`, RETURN: [{id: 123, ownerid: 456, postTime: '2015-10-10T09:22:21', content:''}]
-    - 问题：
+    - 方法名：`GetUserFeed`
+    - 参数：
+        - `user_id`: 当前请求用户的id.
+        - `count`: 单次返回的记录数，最大为100，默认20.
+        - `offset`: 返回结果的偏移，默认为0.
+    - 返回：
+        ```[
+            {"create_time": "Tue May 31 17:46:55 +0800 2011"},
+            "feed_id": "123", 
+            "comment_count": 9,
+            "repost_count": 2,
+            "favorited_count": 1,
+            "content": ""
+            ]
+         ``` 
+   - 问题：
         - 返回多少个records?
         - 如果feed是按照ranking结果而非按照时间来排序的，怎么办呢？
+- 获取某条feed的comment
+    - 方法名：`GetFeedAction`
+    - 参数：
+        - `type=comment`：行为的类别，此处是comment.
+        - `count`：单次返回的记录数，默认20.
+        - `offset`：返回结果的偏移，默认为0.
+    - 返回：
+    ```
+        [
+            "feed_id": "123",
+            "action_type": "comment",
+            "action_id": "456",
+            "action_quote": "this is good",
+            "create_time": "***"
+        ]
+    ```
 
 ### Feed Display 信息流展示
 
