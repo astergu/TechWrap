@@ -326,19 +326,32 @@ Design a simplified version of Twitter where people can post tweets, follow othe
 - posts中的评论如何获取？名人文章的评论可能会包含成百上千的评论。
 - 用户如何获取新的内容？向下无限滚动？还是点击next？
 - 如果获取用户的所有feeds，那么可能需要最少两张表（friends list和feed list）的join。
-- Feed publishing: **push** and **pull**.
 
 
 ### Feed Ranking 信息流排序
 
 - 选择设计影响排序的特征/信号
+    - **Connection Feature**: `is friend`, `degree of connection`
+    - **Interaction Feature**: `visit other's profile`, `like other's posts`, `comment on other's posts/status`, `tag other`, `be tagged`, 
+        `how other people interact with this post`, `do many of your friends/people post the same thing`   
+    - **Preference Feature**: `the type of post you usually engage`
+    - **Temporal Feature**: `the created time of the post`, `have you seen the post`   
 - 如何向用户展示相关或者感兴趣的posts
     - 按时间排序（Chronological）：不太合适，假设有用户在半个小时之内发布了30篇文章，那么他的关联朋友会看到一堆他的文章。
     - 按热度排序（Popularity）
 - 怎么定义哪篇文章更重要？通常是定义一系列特征来对posts进行排序，比如2013年以前，Facebook采用EdgeRank算法来决定哪些文章将被展示在用户的timeline上。
 - **EdgeRank**算法主要包含三类基本信号：`affinity score`, `edge weight`和`time deca`, `edge weight`和`time decay`. 
     - `affinity score`: explicit interactions like comment, like, tag, share, click, time factor, etc.
+- **排序模型** [summary](https://zhuanlan.zhihu.com/p/26539920)
+    - 训练数据生成：
+    - LambdaMART (Listwise)
+    - RankNet (Pairwise)
+- **评价指标**
+    - MAP (Mean Average Precision)
+    - NDCG (Normalized Discounted Cumulative Gain)
+    - Page View
     
+        
     
 ### Additional Features 附加的功能
 
