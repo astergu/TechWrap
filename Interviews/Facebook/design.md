@@ -342,11 +342,30 @@ Design a simplified version of Twitter where people can post tweets, follow othe
 - 怎么定义哪篇文章更重要？通常是定义一系列特征来对posts进行排序，比如2013年以前，Facebook采用EdgeRank算法来决定哪些文章将被展示在用户的timeline上。
 - **EdgeRank**算法主要包含三类基本信号：`affinity score`, `edge weight`和`time deca`, `edge weight`和`time decay`. 
     - `affinity score`: explicit interactions like comment, like, tag, share, click, time factor, etc.
-- **排序模型** [summary](https://zhuanlan.zhihu.com/p/26539920)
-    - 训练数据生成：
-    - LambdaMART (Listwise)
-    - RankNet (Pairwise)
+- **排序模型** [LTR简介](https://zhuanlan.zhihu.com/p/26539920) [LTR基础](http://59.108.48.12/lcwm/course/WebDataMining/slides2012/8%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%8F%8A%E6%8E%92%E5%BA%8F%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80.pdf)
+    - 训练数据生成
+        - 从用户点击记录(query log)里抽取数据标注，存在问题：用户点击有比较大的噪声，只有head query才有点击
+    - 特征抽取
+    - 模型构建
+        - **Classification**问题
+            - 假设训练数据只有click log，无人工标注问题，那
+        - **RankSVM** (Pairwise)
+            - 目标：学习一个线性排序函数f(x) = w · x，如果x<sub>i</sub>比x<sub>j</sub>更相关，那么f(x<sub>i</sub>) > f(x<sub>j</sub>)，也就是(w, x<sub>i</sub> - x<sub>j</sub>) > 0.
+            - 转化成分类问题：(x<sub>i</sub> - x<sub>j</sub>, y)，如果x<sub>i</sub> > x<sub>j</sub>, y = 1，否则y = -1.
+        - LambdaMART (Listwise)
+        - RankNet (Pairwise)
 - **评价指标**
+    - 分类
+        - Accuracy: `(TP+TN)/(TP+TN+FP+FN)`
+        - Precision: `TP/(TP+FP)`
+        - Recall: `TP/(TP+FN)`
+        - F1 score: `2 * P * R / (P + R)`
+        - ROC Curve
+        - PR Curve
+        - AUC
+    - 回归：
+        - MAE 
+        - 均方误差MSE
     - MAP (Mean Average Precision)
     - NDCG (Normalized Discounted Cumulative Gain)
     - Page View
