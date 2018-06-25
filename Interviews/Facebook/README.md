@@ -35,7 +35,12 @@ Facebook面试准备的试题。
             - For example, Google’s index building layer has many more components for document understanding. It would need components for extracting deep links, contact information, referrals (for page rank). On the other hand, Twitter’s index building should be simpler due to small size tweets and some rich media information for attached media. Twitter’s search is head heavy.  So a bulk of engineering efforts in designing their search should go to rapidly indexing new tweets and making them searchable.
             - Work out the above problems on a paper and just think about the ways to break them down.  It also helps to read up on common large scale systems, like watch the public videos about memcached and learn how search engines work.  But during the interview, don’t parrot back what you read; make sure your solution actually answers the question being asked.
 
-    - *ML Practical Design interview* (45min): give a open design question, design a machine learning solution and explain why, e.g., design a [**news feed ranking system**](newsfeed_ranking.md), [**local search ranking system**](local_search_ranking.md), and [**ads targeting system**](ads_ranking.md).
+    - *ML Practical Design interview* (45min): give a open design question, design a machine learning solution and explain why.
+        - Example questions
+            - Design a [**news feed ranking system**](newsfeed_ranking.md)
+            - Design [**local search ranking system**](local_search_ranking.md)
+            - Design [**ads targeting system**](ads_ranking.md)
+            - How would you build, train, and deploy a system to detect if multimedia and/or ads contents being posted violate terms or contains offensive materials?
         - **Expections**
             - Visualize the entire problem and solution space
             - Feature engineering

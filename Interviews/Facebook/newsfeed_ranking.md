@@ -1,3 +1,5 @@
-## News Feed Ranking System Design
+# News Feed Ranking System Design
+
+## Problem Formulation
 
 
