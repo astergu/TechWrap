@@ -45,14 +45,22 @@ Source: https://github.com/jwasham/coding-interview-university#system-design-sca
 
 ## System Design Topics
 
-- Vertical scaling
-- Horizontal scaling
-- Caching
+- **Vertical scaling**：可以通过增加资源来进行扩展，通常意味着数据在单机上。
+- **Horizontal scaling**: 可以通过增强机器来进行扩展，通常这是基于数据分片(data partitioning)。
+- **Caching**：设计一个缓存系统需要考虑以下几点：
+    - Read/write speed
+    - Memory usage
+    - Disk I/O dumping
+    - Scaling
 - Load balancing
 - Database replication
 - Database partitioning
+    - Partitioning of relational data usually refers to decomposing your tables either row-wise (horizontally) or column-wise (vertically).
+- Data Denormalization: [intro](https://www.geeksforgeeks.org/denormalization-in-databases/)
+    - Pros: Less table joins, faster query retrieval; Queries can be simpler
+    - Cons: Updates and inserts are more expensive; Denormalization can make update and insert code harder to write; Data may be inconsistent.
 
-
+[system-design-cheatsheet](https://gist.github.com/vasanthk/485d1c25737e8e72759f)
 
 ### Tutorials
 
