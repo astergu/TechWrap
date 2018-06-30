@@ -1,108 +1,27 @@
-# 数学基础
+# Classical Problems 典型问题
 
-向量内积的几何意义是两个向量之间的接近程度，内积越大，向量越接近，即夹角越小。
+## 多标签分类问题 Multi-label classification
 
-## 范数
+问题简介：[wiki](https://en.wikipedia.org/wiki/Multi-label_classification)
 
-## 随机梯度下降算法 Gradient Descent
+多标签分类问题是多分类问题的一般化问题，因为多分类问题一般是把实例分类到多个分类中的一个类别上，而多标签分类问题不限定实例的分类个数。
 
-## 评估方法
+### 基本方法
 
-### 均方误差
+方法基本上分为两种，一种是将问题转化为传统的分类问题，二是调整现有的算法来适应多标签的分类。
 
-均方误差是回归任务中最常用的性能度量，优化目标通常是使均方误差最小化。
+- **Baseline Approach** (*binary relevance* method)
+    - 为每一个label单独训练一个二分类器(binary classifier)
+- **Approaches without transformations**
+    - **boosting**: AdaBoost
+    - **k-nearest neighbors**: ML-kNN (extended from kNN classifier)
+    - **Decision Tree**
+    - **Neural Networks**
 
-(f(x<sub>i</sub>) - y<sub>i</sub>)<sup>2</sup>
+[sklearn support for Multiclass vs. Multilabel classification](http://scikit-learn.org/stable/modules/multiclass.html)
 
-均方误差有非常好的几何意义，它对赢了常用的欧几里得距离。基于均方误差最小化来进行模型求解的方法称为『最小二乘法(least square method)』。例如，在线性回归中，最小二乘法就是试图找到一条直线，使所有样本到直线上的欧式距离之和最小。
-
-如果变量数多余样例数，X<sup>T</sup>X不满足满秩条件，此时可以解出多个w，它们都能使均方误差最小化，常见的做法是引入正则化（regularization）项。
-
-# 工业界常见机器学习算法总结
-
-机器学习通常需要习得的是*f(x)*，使得*f(x)*的值尽可能地逼近现实世界中存在的真值*y*。之所以说逼近，是因为真值不总能获得，所以才需要机器学习模型来做预测。
-
-## 线性模型
-
-### Linear Regression 线性回归
-
-f(x) = w<sub>1</sub>x<sub>1</sub> + w<sub>2</sub>x<sub>2</sub> + ... + w<sub>d</sub>x<sub>d</sub> + b
-
-一般用向量形式写成
-
-f(x) = w<sup>T</sup> + b.
-
-线性模型形式简单，易于建模。许多功能更为强大的非线性模型可再线性模型的基础上通过引入层级结构或高维映射而得。由于w直观表达了各属性再预测中的重要性，因此线性模型有很好的可解释性(comprehensibility)。
-
-也可以令模型预测值逼近*y*的衍生物，假设示例所对应的输出标记是在指数尺度上变化，那么就可以将输出标记的对数作为线性模型标记的目标，即lny=w<sup>T</sup>x + b。这就是**对数线性回归(log-linear regression)**，它实际上是在试图让*e<sup>w<sup>T</sup>x + b</sup>*逼近*y*。虽然形式上仍是线性回归，但实质上已是再求取输入空间到输出空间的非线性函数映射。
-
-### Logistic Regression 对数几率回归，也叫逻辑斯特回归
-
-如果需要线性模型来做分类任务，那么只需找一个单调可微函数将分类任务的真实标记*y*与线性回归模型的预测值联系起来。也就是，我们需要将实值*z*转换为0/1值，最理想的是『单位跃阶函数』(unit-step function)，但是该函数不连续。可以用**对数几率函数(logistic function)**来替代：
-
-*y = 1/(1 + e<sup>-z</sup>)*
-
-虽然它的名字是回归，但实际确是一种分类学习方法。这种方法有很多优点，例如它是直接对分类可能性进行建模，无需事先假设数据分布，这样就避免了假设分布不准确所带来的问题；它不是仅预测出类别，而是可得到近似概率预测，这对许多需利用概率辅助决策的任务很有用。
+- **Multi-Label vs. Multi-Class**
+    - Multi-class分类问题只会把实例分类到一个分类，而Multi-label分类问题会把实例分类到多个label。
 
 
-### Maximum Entropy Model 最大熵模型
-
-最大熵模型与逻辑斯特模型一样，都属于对数线性模型。
-
-### Linear Discriminant Analysis (LDA) 线性判别分析
-
-LDA用于二分类，它的思想非常朴素：给定训练样例集，设法将样例投影到一条直线上，使得同类样例的投影点尽可能接近、异类样例的投影点尽可能远离；在对新样本进行分类时，将其投影到同样的这条直线上，再根据投影点的位置来确定信仰本的类别。
-
-
-## Clustering问题
-
-## 半监督学习Semi-Supervised Learning
-
-
-## Logistic Regression 逻辑回归
-
-## Decision Tree 决策树
-
-一般地，一棵决策树包含一个根节点、若干个内部节点和若干个叶节点；叶节点对应于决策结果，其他每个节点
-对应于一个属性测试；每个节点包含的样本集合根据属性测试的结果被划分到子节点中；根节点包含样本全集。
-
-给定一棵决策树，决策过程如下：
-1. 从根节点开始
-2. 观察根节点属性的值
-3. 按照与观察值对应的路径往下走
-4. 重复以上步骤，直至达到叶节点
-
-构造决策树最常用的算法是ID3。
-
-
-
-
-## Random Forest 随机森林
-
-# Deep Learning 深度学习
-
-The term "deep learning" was coined in 2006, and refers to machine learning algorithms that have *multiple non-linear layers* and can learn *feature hierarchies*.
-
-Deep learning algorithms can be categorized by their architecture (feed-forward, feed-back, or bi-directional) and training protocols (purely supervised, hybrid, or unsupervised)
-
-## Reading Materials
-- [Deep Learning for Signal and Information Processing](http://cs.tju.edu.cn/web/docs/2013-Deep%20Learning%20for%20Signal%20and%20Information%20Processing.pdf), by Li Deng and Dong Yu (out of Microsoft).
-- [Deep Learning Tutorial](http://www.cs.nyu.edu/~yann/talks/lecun-ranzato-icml2013.pdf), (2013 Presentation by Yann LeCun and Marc'Aurelio Ranzato)
-- [How to Build and Run Your First Deep Learning Network](http://radar.oreilly.com/2014/07/how-to-build-and-run-your-first-deep-learning-network.html)
-
-
-# Materials
-## Open Courses
-- **机器学习基石 Machine Learning Foundations by 林轩田**
-[https://www.bilibili.com/video/av12463015/](https://www.bilibili.com/video/av12463015/)
-    - *When do machines learn? 什么时候用机器学习？*
-        - 存在一个pattern可以学习，并且可以衡量效果
-        - 难以通过编码的方式人工定义问题和解决问题
-        - 存在关于这个pattern可以利用的数据
-
-- **机器学习技法  Machine Learning Techniques by 林轩田**
-
-
-# Tricks
-
-**训练集是真实样本总体的无偏采样**这个假设往往不成立，现有技术大体上有三类做法：第一类是直接对训练集里的反类样例进行『**欠采样**』(undersampling)，即去除一些反例使得正、反例数目接近，然后再进行学习；第二类是对训练集里的正类样例进行『**过采样**』(oversampling)，即增加一些正例使得正、反例数目接近，然后再进行学习；第三类则是直接基于原始训练集进行学习，但在用训练好的分类器进行预测时，进行『**阈值移动**』(threshold-moving)。
+- **One-Vs-The-Rest**策略，也就是**one-vs-all**，这种策略对每个类产生一个分类器。对每一个分类器，正例是当前类，负例是非当前类的所有其他类。 
