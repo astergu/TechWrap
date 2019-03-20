@@ -1,3 +1,11 @@
+# Machine Learning
+
+noise, variance and bias.
+
+An ensemble is just a collection of predictors which come together (e.g. mean of all predictions) to give a final prediction. Ensembling techniques are further classified into *Bagging* and *Boosting*. 
+- **Bagging**: Bagging is a simple ensembling technique in which we build many independent predictors/models/learners and combine them using some model averaging techniques ((e.g. weighted average, majority vote or normal average). Example of bagging ensemble is *Random Forest models*.
+- **Boosting**: Boosting is an ensemble technique in which the predictors are not made independently, but sequentially. Gradient Boosting is an example of boosting algorithm.
+
 # Classical Problems 典型问题
 
 ## 多标签分类问题 Multi-label classification
@@ -24,4 +32,21 @@
     - Multi-class分类问题只会把实例分类到一个分类，而Multi-label分类问题会把实例分类到多个label。
 
 
-- **One-Vs-The-Rest**策略，也就是**one-vs-all**，这种策略对每个类产生一个分类器。对每一个分类器，正例是当前类，负例是非当前类的所有其他类。 
+- **One-Vs-The-Rest**策略，也就是**one-vs-all**，这种策略对每个类产生一个分类器。对每一个分类器，正例是当前类，负例是非当前类的所有其他类。
+
+## Boosting Models
+
+Boosting refers to this general problem of producing a very accurate prediction rule by combining rough and moderately inaccurate rules-of-thumb.
+
+Gradient boosting involves three elements:
+1. A loss function to be optimized.
+2. A weak learner to make predictions.
+3. An additive model to add weak learners to minimize the loss function.
+
+
+### AdaBoost
+
+The first boosting algorithm
+
+
+XGBoost

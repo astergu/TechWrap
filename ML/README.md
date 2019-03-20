@@ -85,10 +85,18 @@ The term "deep learning" was coined in 2006, and refers to machine learning algo
 
 Deep learning algorithms can be categorized by their architecture (feed-forward, feed-back, or bi-directional) and training protocols (purely supervised, hybrid, or unsupervised)
 
+
+## Representation Learning
+
+Representation learning attempts to automatically learn good features or representations.
+
+Deep learning algorithms attempt to learn (multiple levels of) representation and an output.
+
 ## Reading Materials
 - [Deep Learning for Signal and Information Processing](http://cs.tju.edu.cn/web/docs/2013-Deep%20Learning%20for%20Signal%20and%20Information%20Processing.pdf), by Li Deng and Dong Yu (out of Microsoft).
 - [Deep Learning Tutorial](http://www.cs.nyu.edu/~yann/talks/lecun-ranzato-icml2013.pdf), (2013 Presentation by Yann LeCun and Marc'Aurelio Ranzato)
 - [How to Build and Run Your First Deep Learning Network](http://radar.oreilly.com/2014/07/how-to-build-and-run-your-first-deep-learning-network.html)
+
 
 
 # Materials

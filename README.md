@@ -1,6 +1,10 @@
 # Task List
 
 - [x] 学习Github Flavored Markdown
+- [] Python语言精进
+- [] Numpy入门
+- [] Pandas入门
+- [] Matplotlib, Seaborn入门
 - [] 列出需要掌握的机器学习算法列表，以及适用场景（可以根据类别）
 - [] 列出需要研究掌握的概念和算法
 - [] 创造属于自己的算法描述，最好可以配以描述案例。
