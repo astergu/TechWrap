@@ -1,7 +1,7 @@
 # Task List
 
 - [x] 学习Github Flavored Markdown
-- [] Python语言精进
+- [x] [Python语言精进](./Tools/Python/README.md)
 - [] Numpy入门
 - [] Pandas入门
 - [] Matplotlib, Seaborn入门
