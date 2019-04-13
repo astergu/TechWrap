@@ -39,6 +39,8 @@ Additionally, Amazon tends to ask a lot of questions about object-oriented desig
 
 ## The Google Interview
 
+### Things-to-do
+
 - A Google engineer performs the first phone screen, so expect tough technical questions. These questions may involve coding, sometimes via a shared document. Candidates are typically held to the same standard and are asked similar questions one phone screens as in on-site interview.
 - On your on-site interview, you'll interview with four to six people, one of whom will be a lunch interviewer. Your lunch interviewer doesn't submit feedback, so this is a great opportunity to ask honest questions. 
 - Interviewers are typically not given specific focuses, and there is no "structure" or "system" as to what you're asked. Each interviewer can conduct the interview however she/he would like.
@@ -50,6 +52,8 @@ As a web-based company, Google cares about how to design a scalable system.
 
 ## The Apple Interview
 
+### Things-to-do
+
 - Begins with a recruiter screen to get a basic sense of your skills.
 - Onsite interview: you'll typically be greeted by the recruiter who provides an overview of the process. You will then have 6-8 interviews with members of the team with which you're interviewing. 
 
@@ -58,6 +62,8 @@ As a web-based company, Google cares about how to design a scalable system.
 If you know what team you're interviewing with, make sure you read up on that product. What do you like about it? What would you improve? Offering specific recommendations can show your passion for the job. 
 
 ## The Facebook Interview
+
+### Things-to-do
 
 - Once selected for an interview, candidates will generally do one or two phone screens.
 - After the phone interview(s), you might be asked to do a homework assignment that will include a mix of coding and algorithms. Pay attention to your coding style here. 
