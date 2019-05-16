@@ -96,3 +96,34 @@ Unlike some companies which do "pooled" interviews, Palantir interviews for a sp
 Many candidates report that Palantir's questions were harder than those they saw at Google and other top companies. If you're interviewing with Palantir, you should learn your core data structures and algorithms inside and out. 
 
 Brush up on system design too if you're interviewing for a backend role.
+
+
+# Technical Questions
+
+## How to Prepare
+
+## What You Need to Know
+
+## Walking Through a Problem
+
+## Optimize & Solve Technique #1: Look for BUD
+
+## Optimize & Solve Technique #2: DIY (Do It Yourself)
+
+## Optimize & Solve Technique #3: Simplify and Generalize
+
+## Optimize & Solve Technique #4: Base Case and Build
+
+## Optimize & Solve Technique #5: Data Structure Brainstorm
+
+## Best Conceivable Runtiime (BCR)
+
+## Handling Incorrect Answers
+
+## When You've Heard a Question Before
+
+## The "Perfect" Language for Interviews
+
+## What Gooding Coding Looks Like
+
+## Don't Give Up!
