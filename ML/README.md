@@ -161,6 +161,6 @@ Deep learning algorithms attempt to learn (multiple levels of) representation an
 ### 计算相似度
 
 #### 欧几里得距离 Euclidean Distance 
- 
 
-#### 皮尔逊相关度 
+
+#### 皮尔逊相关度 Pearson Corelation
