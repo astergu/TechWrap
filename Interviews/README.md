@@ -2,8 +2,17 @@
 
 Usually take 30 min.
 
+Ask questions about:
+
+1. A brief introduction to what you are currently working on.
+2. Why do you consider looking for job opportunities?
+3. When will you consider moving to a new job?
+4. What work status are you currently holding? Do you need work sponsorship?
+5. What do you value the most for this company's offer?
+6. What programming language are you most familiar with?
+
 ### Goal 
-- Decide if you fit the job requirement.
+- Decide if you fit the job requirement
 - Get a basic idea of your skill set and seniority to try to understand what positions you might qualify and be interested in.
 
 ### Key points
