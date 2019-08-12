@@ -43,5 +43,9 @@ print('Minimum of others: {0}.'.format(min_non_setosa))
 
 Refer: [https://metacademy.org/graphs/concepts/logistic_regression](https://metacademy.org/graphs/concepts/logistic_regression)
 
+# Day 3: How to evaluate prediction 如何评估预测准确度
 
+## RMSE & MAE
+
+## AUC
 

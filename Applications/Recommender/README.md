@@ -18,4 +18,9 @@
 
 - [Knowledge-aware Graph Neural Networks with Label Smoothness Regularization for Recommender Systems](https://arxiv.org/pdf/1905.04413.pdf), KDD 2019. Stanford & 美团点评. 
   - Collaborative Filtering: Matrix factorization
-  - Kim CNN, Knowledge-aware CNN, DKN (Deep Knowledge Network), MKR, 
+  - Kim CNN, Knowledge-aware CNN, DKN (Deep Knowledge Network), MKR,
+
+
+## Application
+
+MAE, RMSE
