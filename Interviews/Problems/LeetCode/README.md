@@ -1,6 +1,6 @@
 # 1-50 Questions
 
-1. **Two Sum** [[c++](1-50/1_TwoSum.cpp), [python](1-50/1_TwoSum.py)] :star:
+1. **Two Sum** [[c++](1-50/1_TwoSum.cpp), [python](1-50/1_TwoSum.py)] :star:  > Array
    - 问题描述：求数组中两数之和等于一个指定值的索引。
    - 方法：
      - Naive算法（Brute Force）:采用两层循环来为每个x寻找是否有对应的其他元素其加起来符合要求。时间复杂度为O(N<sup>2</sup>)，空间复杂度为O(1)；
@@ -22,5 +22,15 @@
       - 遍历：重点需要考虑corner case，即增加以后多一位，也要避免首位为零的情况。[plusOne]，时间复杂度为O(N)。
       - 递归：[plusOne2]，时间复杂度为O(N)。
 
-4.   **SingleNumber**
-5.   
+4.   **Single Number**
+
+# 501-600 Questions
+
+509. **Fibonacci Number**
+
+# 1001-1100 Questions
+
+1086.  **High Five**
+    - 方法：
+      - 方法一：遍历
+

@@ -4,12 +4,47 @@
 
 预计能提供中午1个小时，晚上2个小时，即每天共3个小时，每周（加周末）共21个小时的时间。按照一个月时间去准备的话，共有84个小时的时间准备。
 
-需要覆盖的topics有：
-1. System design
-2. 
+## 需要覆盖的topics
+1. Coding
+2. System design / ML system design
+3. Language specific concepts
+4. Previous projects
+5. Company specific reading
+6. Leadership (non-tech)
 
-# Prep Schedule
+## Coding Prep Plan
+1. Complete arrays and strings EASY (5 days) to gain some confidence.
+2. Everyday do 1 medium of arrays OR strings along with 1 easy of linked list or backtracking.
+3. Do trees easy and graphs.
+4. Do sorting & searching.
+5. Do other remaining questions.
+
+
+## Tips
+1. Always think of the worst case scenario.
+
+Goal
+- Easy: 10mins
+- Medium: 30mins
+- Hard: 1hr
+
+# Prep Tracking
 
 ## Day 1
 
+[**Array**] Easy +2 
+
+### What have learnt
+
+
+
 ## Day 2
+
+## Day *
+
+System design
+1. If you were to build a social networking website from scratch, how would you design the system?
+
+## Day *
+
+Could you tell me a little bit about the project you are most proud of?
