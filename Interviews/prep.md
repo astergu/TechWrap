@@ -30,15 +30,21 @@ Goal
 
 # Prep Tracking
 
+- **Start**: 269/ 1159
+- **Easy**: 113
+- **Medium**: 136
+- **Hard**: 20
+
 ## Day 1
 
-[**Array**] Easy +2 
+[**Array**] Easy +2: 1064, 1086
 
 ### What have learnt
 
-
-
 ## Day 2
+
+[**Array**] Easy: 832, 1154
+
 
 ## Day *
 

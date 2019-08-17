@@ -29,6 +29,9 @@ class Solution(object):
             res.append((k, int(sum(values) / 5)))
         return res
 
+    def highFive_2(self, items):
+        pass
+
 
 if __name__ == '__main__':
     s = Solution()
