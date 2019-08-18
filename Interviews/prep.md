@@ -35,9 +35,18 @@ Goal
 - **Medium**: 136
 - **Hard**: 20
 
-## Day 1
+## Day 1 (Aug 17 - Aug 18)
 
 [**Array**] Easy +2: 1064, 1086
+
+### CLRS chap 1-5 
+#### Sorting
+
+- **Insertion Sort**: [python](../Algorithms/Sorting/InsertionSort.py)
+
+#### Leetcode problems
+
+- 922. Sort Array By Parity II (*Easy*) [python](./Problems/Leetcode/901-1000/922_SortArrayByParityII.py)
 
 ### What have learnt
 
