@@ -35,3 +35,14 @@ Usually conducted by an engineer.
         - remove duplicates from a list of strings which is larger than the available memory (i.e. with reloads from disk)
         - count the number of disjoint objects in a bitmap
         - implement a program which plays tic-tac-toe
+
+## Programming Interviews Exposed
+
+### Phone Screen
+
+- How do you allocate memory in C?
+- Why is recursion bad?
+- How iis programming for a mobile device different from programmiing for a normal computer?
+- **FizzBuzz**: Write a program that prints the numbers from 1 to 100. If a number is divisible by 3, print "Fizz" instead of the number, if a number is divisible by 5, print "Buzz" inistead of the number, and if a number is divisible by both 3 and 5, print "FizzBuzz" instead of the number.
+- **Reverse a string**: Write a function that reverses a string without using any library functions.
+- **Removing duplicates**: Given an unsorted list of integers, write a function that returns a new list with all duplicate values removed.

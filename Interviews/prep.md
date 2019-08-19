@@ -37,7 +37,7 @@ Goal
 
 ## Day 1 (Aug 17 - Aug 18)
 
-[**Array**] Easy +2: 1064, 1086
+[**Array**] Easy +2: 922, 1086
 
 ### CLRS chap 1-5 
 #### Sorting
@@ -52,8 +52,16 @@ Goal
 
 ## Day 2
 
-[**Array**] Easy: 832, 1154
+[**Array**] Easy: 1122, 
 
+#### Sorting
+
+- **Merge Sort** [python](../Algorithms/Sorting/MergeSort.py)
+
+#### Leetcode problems
+
+- 1122. Relative Sort Array
+- 1030. Matrix Cells in Distance Order
 
 ## Day *
 
