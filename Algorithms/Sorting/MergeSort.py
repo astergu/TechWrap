@@ -5,11 +5,21 @@ import sys
 
 class Solution:
     def merge_sort(self, arr):
-        if len(arr) == 1:
-            return arr[0]
-        pivot = len(arr) << 1
-        left = self.merge_sort(arr[:pivot])
-        right = self.merge_sort(arr[pivot:])
+        if len(arr) <= 1:
+            return arr
+        left, right = self.split(arr)
+        return self.merge(self.merge_sort(left), self.merge_sort(right))
+
+    def split(self, arr):
+        middle = len(arr) // 2
+        return arr[:middle], arr[middle:]
+
+    def merge(self, left, right):
+        if not left:
+            return right
+        if not right:
+            return left
+
         ret = []
         i, j = 0, 0
         while i < len(left) and j < len(right):
@@ -19,12 +29,10 @@ class Solution:
             else:
                 ret.append(right[j])
                 j += 1
-        while i < len(left):
-            ret.append(left[i])
-            i += 1
-        while j < len(right):
-            ret.append(right[i])
-            j += 1
+        if i < len(left):
+            ret += left[i:]
+        if j < len(right):
+            ret += right[j:]
         return ret
 
 
