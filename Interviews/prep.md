@@ -72,6 +72,12 @@ Goal
     - What is the relationship between the running time of insertion sort and the number of inversions in the input array?
     - Give an algorithm that determines the number of inversions in any permutation on *n* elements in O(nlgn) worst-case time. (Hint: Modify merge sort.)
 
+## Day 4
+
+- **Bubble Sort**
+- Leetcode 207
+- Leetcode 210
+
 System design
 1. If you were to build a social networking website from scratch, how would you design the system?
 
