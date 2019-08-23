@@ -22,3 +22,14 @@ Constraints:
     The given address is a valid IPv4 address.
 
 """
+
+
+class Solution:
+    def defangIPaddr(self, address):
+        return address.replace('.', '[.]')
+
+
+if __name__ == '__main__':
+    s = Solution()
+    addr = '1.1.1.1'
+    print(s.defangIPaddr(addr))
