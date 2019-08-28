@@ -26,15 +26,6 @@ class Solution:
     def sumSubarrayMins_1(self, A):  # Memory Limit Exceeded
         modulo = pow(10, 9) + 7
 
-        def subarr(A):
-            ret = [[]]
-            for item in A:
-                tmp = []
-                for x in ret:
-                    tmp.append(x + [item])
-                ret.extend(tmp)
-            return ret
-
         def sub_cont_arr(A):
             ret = []
             for i in range(len(A)):
@@ -47,11 +38,37 @@ class Solution:
         return sum_min % modulo
 
     def sumSubarrayMins(self, A):
-        pass
+        if not A:
+            return 0
+
+        n = len(A)
+        left, right = [None] * n, [None] * n
+        s1, s2 = [], []
+        cnt = 1
+        for i in range(n):
+            while len(s1) > 0 and s1[-1][0] > A[i]:
+                cnt += s1[-1][1]
+                s1.pop()
+            s1.append([A[i], cnt])
+            left[i] = cnt
+        print(left)
+
+        for i in range(n - 1, -1, -1):
+            cnt = 1
+            while len(s2) > 0 and s2[-1][0] > A[i]:
+                cnt += s2[-1][1]
+                s2.pop()
+            s2.append([A[i], cnt])
+            right[i] = cnt
+        print(right)
+
+        res = 0
+        for i in range(n):
+            res += A[i] * left[i] * right[i]
+        return res
 
 
 if __name__ == '__main__':
     s = Solution()
     A = [3, 1, 2, 4]
-    # print(s.sumSubarrayMins_1(A))
-    s.sumSubarrayMins_1(A)
+    print(s.sumSubarrayMins(A))

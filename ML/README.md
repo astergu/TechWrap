@@ -164,3 +164,8 @@ Deep learning algorithms attempt to learn (multiple levels of) representation an
 
 
 #### 皮尔逊相关度 Pearson Corelation
+
+
+#### One-Hot Encoding
+
+#### Label Encoder

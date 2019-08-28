@@ -33,3 +33,28 @@ A solution set is:
 
 class Solution:
     def combinationSum(self, candidates, target):
+        ans = []
+        N = len(candidates)
+
+        def dfs(part, sum_, goal, index):
+            if sum_ == target:
+                ans.append(part)
+            else:
+                for i in range(N - index):
+                    cur = candidates[index + i]
+                    if cur <= goal:
+                        dfs(part + [cur], sum_ + cur,
+                            goal - cur, index + i)
+
+        for i in range(N):
+            mem = candidates[i]
+            dfs([mem], mem, target - mem, i)
+
+        return ans
+
+
+if __name__ == '__main__':
+    candidates = [2, 3, 6, 7]
+    target = 7
+    s = Solution()
+    print(s.combinationSum(candidates, target))
