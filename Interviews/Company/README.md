@@ -2,7 +2,7 @@
 
 > :sweat_drops: means `HARD`, :blush: means `MEDIUM`, :v: means `EASY`
 
-## Google
+## Google高频题
 
 | No. | Title | Topic | Difficulty | 
 | ------ | ------ | ------- | ------- |
@@ -182,7 +182,7 @@
 | 12 | Integer to Roman | | :blush: |
 | 942 | DI String Match | | :v: |
 | 1162 | As Far from Land as Possible | | :blush: |
-| 323 | Number of Connected Components in an Undirected Graph | | :blush: |
+| [323](./Google/323_Number_of_Connected_Components_in_an_Undirected_Graph.py) | Number of Connected Components in an Undirected Graph | Union-find, BFS, DFS | :blush: |
 | 1302 | Deepest Leaves Sum | | :blush: |
 | 752 | Open the Lock | | :blush: |
 | 556 | Next Greater Element III | | :blush: |
