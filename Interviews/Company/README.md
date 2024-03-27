@@ -7,7 +7,7 @@
 | No. | Title | Topic | Difficulty | 
 | ------ | ------ | ------- | ------- |
 | 818 | Race Car | | :sweat_drops: |
-| 359 | Logger Rate Limiter | | :v: |
+| 359 | [Logger Rate Limiter](./Google/359_Logger_Rate_Limiter.py) | **HashTable** | :v: |
 | 2034 | Stock Price Fluctuation | |  :blush: |
 | 729 | My Calendar I | | :blush: |
 | 715 | Range Module | | :sweat_drops: |
@@ -182,7 +182,7 @@
 | 12 | Integer to Roman | | :blush: |
 | 942 | DI String Match | | :v: |
 | 1162 | As Far from Land as Possible | | :blush: |
-| [323](./Google/323_Number_of_Connected_Components_in_an_Undirected_Graph.py) | Number of Connected Components in an Undirected Graph | Union-find, BFS, DFS | :blush: |
+| 323 | [Number of Connected Components in an Undirected Graph](./Google/323_Number_of_Connected_Components_in_an_Undirected_Graph.py) | **Union-find**, **BFS**, **DFS** | :blush: |
 | 1302 | Deepest Leaves Sum | | :blush: |
 | 752 | Open the Lock | | :blush: |
 | 556 | Next Greater Element III | | :blush: |
@@ -216,3 +216,10 @@
 | 52 | N-Queens II | | :sweat_drops: |
 | 343 | Integer Break | | :blush: |
 | 1207 | Unique Number of Occurrences | | :v: |
+
+
+## Microsoft高频题
+
+| No. | Title | Topic | Difficulty | 
+| ------ | ------ | ------- | ------- |
+| 1405 | Longest Happy String | | :blush: |

@@ -1,3 +1,32 @@
+- [最优化](#最优化)
+  - [Dynamic Programming 动态规划](#dynamic-programming-动态规划)
+  - [Greedy Algorithms 贪心算法](#greedy-algorithms-贪心算法)
+- [搜索](#搜索)
+  - [Backtracking 回溯算法](#backtracking-回溯算法)
+    - [回溯算法和DFS的区别](#回溯算法和dfs的区别)
+      - [典型问题](#典型问题)
+        - [子集 Subsets （元素无重不可复选）](#子集-subsets-元素无重不可复选)
+        - [组合 Combinations （元素无重不可复选）](#组合-combinations-元素无重不可复选)
+        - [排列 Permutations （元素无重不可复选）](#排列-permutations-元素无重不可复选)
+        - [子集/组合 Subsets（元素可重不可复选）](#子集组合-subsets元素可重不可复选)
+        - [排列（元素可重不可复选）](#排列元素可重不可复选)
+- [图算法](#图算法)
+  - [Depth-First Search 深度优先搜索](#depth-first-search-深度优先搜索)
+    - [Finding Circles](#finding-circles)
+    - [Articulation Vertices](#articulation-vertices)
+  - [Breadth-First Search 广度优先搜索](#breadth-first-search-广度优先搜索)
+- [参考](#参考)
+
+# 最优化 
+
+## Dynamic Programming 动态规划 
+
+存储部分结果能减少重复计算，但对quicksort，backtracking和dfs没有用，因为这些算法用的是不同的parameter values。
+
+## Greedy Algorithms 贪心算法
+
+
+
 # 搜索
 
 ## Backtracking 回溯算法
