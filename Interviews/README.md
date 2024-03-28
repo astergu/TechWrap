@@ -17,6 +17,7 @@
     - [Merge Sort 归并排序 \*](#merge-sort-归并排序-)
     - [Quick Sort 快速排序 \*](#quick-sort-快速排序-)
     - [Bucket Sort 桶排序 \*](#bucket-sort-桶排序-)
+    - [Topological Sort 拓扑排序](#topological-sort-拓扑排序)
   - [Searching 搜索算法](#searching-搜索算法)
     - [Binary Search 二分搜索](#binary-search-二分搜索)
   - [Union-Find 并查集](#union-find-并查集)
@@ -47,7 +48,7 @@
 | Union-Find 并查集 | 动态连通性，e.g. `判定合法等式` | - 把原始问题抽象为图论问题 <br> - 很多使用DFS解决的问题，也可以用Union-Find算法解决 | - 基本实现：O(N) <br> - 平衡性优化+路径压缩：O(logN) |
 | Depth-First Search 深度优先搜索 | | | |
 | Breadth-First Search 广度优先搜索 | | | |
-| Sliding Window 滑动窗口 | | | |
+| Sliding Window 滑动窗口 | 最长** | | |
 
 
 <br>
@@ -216,6 +217,8 @@ def merge(A, p, q, r):
 ### Quick Sort 快速排序 *
 
 ### Bucket Sort 桶排序 *
+
+### Topological Sort 拓扑排序
 
 ## Searching 搜索算法
 
